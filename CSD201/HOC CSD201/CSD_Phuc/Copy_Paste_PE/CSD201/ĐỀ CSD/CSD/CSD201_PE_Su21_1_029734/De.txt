@@ -1,0 +1,10 @@
+Q1
+(f1) addLast , if Place.charAt(0)= B do nothing
+
+(f2)
+add X to head, Y to index 3
+
+(f3)
+replace palce first max depth  = XX
+
+(f4) sort by age index 2- 5

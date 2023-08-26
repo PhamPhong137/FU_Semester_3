@@ -1,0 +1,97 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+.header-img img {
+  height: 90px;
+  width: 120px;
+}
+.header-img {
+  text-align: center;
+}
+.header-title {
+  padding-left: 80px;
+  margin-top: 50px;
+  color: red;
+  font-style: italic;
+}
+.header-title h3 {
+  margin: 0px;
+}
+.header-search {
+  margin-top: 43px;
+  padding-right: 40px;
+}
+.header-search div {
+  width: 80%;
+  float: right;
+}
+.lemenu1 {
+  background-color: rgb(61, 193, 182);
+}
+.menu {
+  padding: 0px;
+}
+.nav1 {
+    width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.desc-text h1 {
+  color: rgb(61, 193, 182);
+  text-align: center;
+}
+.desc-text p {
+  font-size: 25px;
+  padding: 10px;
+}
+.seller h1 {
+  text-align: center;
+  color: rgb(61, 193, 182);
+  padding: 20px;
+}
+.seller-text {
+  text-align: justify;
+  font-size: 20px;
+}
+.seller-text h3 {
+  color: orange;
+}
+.order-title {
+  color: rgb(61, 193, 182);
+  text-align: center;
+}
+.order-detail {
+  padding: 5%;
+}
+.footer {
+  background-color: rgb(61, 193, 182);
+  text-align: center;
+  padding: 10px;
+  color: white;
+}
+@media all and (max-width: 900px) {
+  .header-title {
+    text-align: center;
+    padding-left: 0px;
+    margin: 0px;
+  }
+  .header-img {
+    text-align: center;
+  }
+  .header-search {
+    display: flex;
+    justify-content: center;
+  }
+
+  .header-search div {
+    float: none;
+  }
+  .nav1{
+    display: block;
+  }
+  .nav1 li a{
+    text-align: center;
+  }
+}

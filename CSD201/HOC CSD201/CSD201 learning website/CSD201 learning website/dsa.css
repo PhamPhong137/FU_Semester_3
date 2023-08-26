@@ -1,0 +1,14 @@
+H1 {color:darkblue; font-family:Arial;}
+H2 {color:indianred; font-family:Arial;}
+.center {align:center}
+.red
+ {color: red;
+  background:lavender;
+  font-family: "Times New Roman";
+  font-size: 16px;
+  font-style:normal;
+  font-weight: bold
+ }
+.slant
+ {font-style:italic;
+ }

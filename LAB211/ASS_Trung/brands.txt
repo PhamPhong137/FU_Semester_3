@@ -1,0 +1,12 @@
+B7-2018, BMW 730Li (2018), Harman Kardon, 3.749
+B7-MS, BMW 730Li M Sport, Harman Kardon: 4.319
+B7-MS20, BMW 730Li M Sport (2020), Harman Kardon: 4.369
+B7-PE, BMW 730Li Pure Excellence, Harman Kardon: 4.929
+B5-18, BMW 530i (2018), Alpine: 2.599
+B7019, BMW 530i (2019) , Alpine: 2.729
+BX4-18, BMW X4 xDrive20i (2018), Sony: 2.799
+BX4-17, BMW X4 xDrive20i (2019) , Sony: 2.899
+B3-GT18, BMW 320i GT (2018), Bose: 1,799
+B3-S19, BMW 320i Sportline (2019), Bose: 1.899
+B5-X19, BMW X5 xDrive40i XLine (2019), Bose: 4.199
+B5-X20, BMW X5 xDrive40i XLine (2020), Bose: 4.239

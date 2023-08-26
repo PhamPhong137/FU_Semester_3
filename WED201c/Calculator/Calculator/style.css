@@ -1,0 +1,10 @@
+.result input{
+    width: 218px;
+    margin-bottom: 5px;
+}
+
+
+.table tr td input{
+    width: 50px;
+    height: 50px;
+}

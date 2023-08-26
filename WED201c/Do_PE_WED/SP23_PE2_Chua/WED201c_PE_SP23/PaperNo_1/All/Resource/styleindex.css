@@ -1,0 +1,89 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-menu ul {
+  list-style: none;
+  display: flex;
+}
+.header-menu ul a {
+  text-decoration: none;
+  padding: 20px;
+  font-size: 20px;
+}
+.banner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.content h1 {
+  text-align: center;
+  color: rgb(43, 209, 154);
+}
+.content p {
+  padding: 2px 10px;
+  color: orange;
+  font-size: 30px;
+  font-style: italic;
+}
+.footer {
+  background-color: rgb(27, 114, 181);
+}
+.footer-info {
+  display: flex;
+  justify-content: space-evenly;
+  color: white;
+}
+.copyright {
+  text-align: center;
+  color: white;
+  padding: 20px;
+  font-size: 20px;
+}
+
+/* order */
+.order {
+  width: 600px;
+  margin: auto;
+}
+.order h1 {
+  background-color: rgb(19, 148, 148);
+  margin: 0px;
+  padding: 10px;
+}
+.order-info {
+  display: flex;
+}
+.order-info select {
+  height: 50px;
+  width: 300px;
+  margin-top: 5px;
+  border: 1px solid black;
+  margin-left:44px ;
+}
+.order-info p {
+  width: 200px;
+  font-size: 20px;
+  padding-left: 5px;
+}
+.order-info input {
+  height: 50px;
+  width: 300px;
+  border: 1px solid black;
+}
+.button {
+  margin-top: 10px;
+  background-color: orange;
+  color: white;
+  padding: 10px 30px;
+  border-radius: 10px;
+  margin-left: 40%;
+}
+.total {
+  width: 100%;
+  background-color: green;
+  text-align: center;
+  padding: 10px 0px;
+  color: white;
+  margin: 10px 0px;
+}

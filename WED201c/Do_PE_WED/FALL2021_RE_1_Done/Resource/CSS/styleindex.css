@@ -1,0 +1,100 @@
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 30px;
+}
+.header img {
+  width: 100px;
+}
+.header-text {
+  font-style: italic;
+  color: orange;
+  /* padding-left: 30px; */
+}
+/* .header-search {
+  padding-right: 30px;
+} */
+.header-search button {
+  background-color: black;
+  color: white;
+}
+.banner img {
+  width: 100%;
+  margin-bottom: -5px;
+}
+.menu {
+  background-color: rgb(57, 56, 56);
+  color: white;
+  width: 20%;
+}
+.menu ul {
+  padding: 0px;
+}
+.menu ul li {
+  list-style: none;
+  padding: 10px;
+  margin: 10px 0px;
+}
+#menu {
+  margin-top: -16px;
+  background-color: rgb(18, 131, 131);
+}
+#cardvideo {
+  background-color: rgb(68, 133, 68);
+}
+.content {
+  display: flex;
+}
+
+.main-content {
+  padding: 25px;
+  width: 80%;
+  padding-bottom: 50px;
+}
+.main-content-title {
+  text-align: center;
+  color: rgb(29, 164, 164);
+}
+.main-content-items {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 30px;
+}
+
+.item {
+  border-radius: 7px 7px 0px 0px;
+  box-shadow: 5px 5px 5px 3px gray;
+  padding: 20px;
+}
+.item img {
+  width: 100%;
+}
+.item-info {
+  text-align: center;
+}
+.item-info del {
+  color: rgb(162, 161, 161);
+}
+.item-info p {
+  color: red;
+}
+.item-info div {
+  display: inline-block;
+  background-color: rgb(255, 101, 5);
+  color: white;
+  border-radius: 30px;
+  padding: 20px 25px;
+}
+
+.footer {
+  background-color: rgb(33, 179, 179);
+  text-align: center;
+  color: white;
+  padding: 17px;
+}

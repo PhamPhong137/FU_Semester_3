@@ -1,0 +1,41 @@
+.banner {
+  padding: 0px;
+}
+.fav-text {
+  color: orange;
+  border-bottom: 5px solid rgb(57, 161, 205);
+  font-size: 30px;
+}
+.fav-img {
+  display: flex;
+  margin: 50px 0px;
+}
+.fav-name {
+  font-size: 20px;
+  padding-left: 2px;
+}
+.hotel-desc {
+  position: relative;
+}
+.hotel-name{
+    width: 100%;
+    position: absolute;
+    bottom: 5px;
+    color: white;
+    text-align: center;
+    background-color: rgba(22, 21, 21,0.3);
+}
+.green th{
+    color: green;
+    text-align: center;
+}
+.orange{
+    color: orange;
+    text-align: center;
+}
+.footer{
+    background-color: rgb(13, 114, 89);
+    text-align: center;
+    padding: 15px;
+    color: white;
+}

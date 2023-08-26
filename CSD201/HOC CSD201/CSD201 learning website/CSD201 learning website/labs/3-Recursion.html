@@ -1,0 +1,401 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=File-List href="3-Recursion_files/filelist.xml">
+<link rel=Edit-Time-Data href="03-Recursion_files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>3. Recursion</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>User</o:Author>
+  <o:LastAuthor>User</o:LastAuthor>
+  <o:Revision>6</o:Revision>
+  <o:TotalTime>8</o:TotalTime>
+  <o:Created>2013-09-23T01:27:00Z</o:Created>
+  <o:LastSaved>2013-09-23T10:01:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>846</o:Words>
+  <o:Characters>4827</o:Characters>
+  <o:Company>HOME</o:Company>
+  <o:Lines>40</o:Lines>
+  <o:Paragraphs>11</o:Paragraphs>
+  <o:CharactersWithSpaces>5662</o:CharactersWithSpaces>
+  <o:Version>11.5606</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+h1
+	{mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:1;
+	font-size:24.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+p
+	{mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+@page Section1
+	{size:612.0pt 792.0pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	mso-header-margin:36.0pt;
+	mso-footer-margin:36.0pt;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:163865408;
+	mso-list-template-ids:-1049299886;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l0:level2
+	{mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level3
+	{mso-level-tab-stop:108.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level4
+	{mso-level-tab-stop:144.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level5
+	{mso-level-tab-stop:180.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level6
+	{mso-level-tab-stop:216.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level7
+	{mso-level-tab-stop:252.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level8
+	{mso-level-tab-stop:288.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level9
+	{mso-level-tab-stop:324.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l1
+	{mso-list-id:681392611;
+	mso-list-template-ids:-72717056;}
+@list l1:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]-->
+</head>
+
+<body lang=EN-US link=blue vlink=blue style='tab-interval:36.0pt'>
+
+<div class=Section1>
+
+<p><a href="../lab.htm">Return to Exercises</a> </p>
+
+<h1>3-Recursion </h1>
+
+<p><em>Note</em>:&nbsp; You can select and do some questions according to your
+ability only. We would like to note you that the more questions you do the
+better for you in doing final practical&nbsp; and writing exams.</p>
+
+<p><strong>Writing exercises </strong><br>
+1.&nbsp;&nbsp; Give the sequence of argument values that result when the
+following program is invoked for each of the integers 1 through 9.</p>
+
+<p>&nbsp;int puzzle(int n)<br>
+<span style='mso-spacerun:yes'>  </span>{if (n == 1) return 1;<br>
+<span style='mso-spacerun:yes'>     </span>if (n % 2 == 0)<br>
+<span style='mso-spacerun:yes'>       </span>return puzzle(n/2);<br>
+<span style='mso-spacerun:yes'>        </span>else<br>
+<span style='mso-spacerun:yes'>         </span>return puzzle(3*n+1);<br>
+<span style='mso-spacerun:yes'>   </span>}</p>
+
+<p>2.&nbsp;&nbsp; Use the following function puzzle(..) to answer problems 2.1
+- 2.3.<br>
+int puzzle(int base, int limit)<br>
+<span style='mso-spacerun:yes'> </span>{ //base and limit are nonnegative
+numbers<br>
+<span style='mso-spacerun:yes'>    </span>if(base &gt; limit)<br>
+<span style='mso-spacerun:yes'>      </span>return(-1);<br>
+<span style='mso-spacerun:yes'>        </span>else if(base == limit)<br>
+<span style='mso-spacerun:yes'>          </span>return 1;<br>
+<span style='mso-spacerun:yes'>           </span>else<br>
+<span style='mso-spacerun:yes'>            </span>return(base * puzzle(base +
+1, limit));<br>
+<span style='mso-spacerun:yes'> </span>}<br>
+2.1&nbsp; Identify the base case(s) of function puzzle(..)<br>
+2.2&nbsp; Identify the recursive case(s) of function puzzle(..) <br>
+2.3&nbsp; Show what would be displayed by the following calls. <br>
+a. System.out.print(puzzle(14,10));<br>
+b. System.out.print(puzzle(4,7));<br>
+c. System.out.print(puzzle(0,0));<br>
+3.&nbsp;&nbsp; Show the output that will be displayed by the call show(123); <br>
+&nbsp;void show(int n)<br>
+<span style='mso-spacerun:yes'>  </span>{ if(n&gt;0) show(n/10);<br>
+<span style='mso-spacerun:yes'>    </span>System.out.print((n%10));<br>
+<span style='mso-spacerun:yes'>  </span>}<o:p></o:p></p>
+
+<p><a name="OLE_LINK5" id="OLE_LINK6"></a><a name="OLE_LINK6" id="OLE_LINK5"></a><span
+style='mso-bookmark:OLE_LINK5'>4.&nbsp;&nbsp; Show the output that will be
+displayed by the call show(134); </span></p>
+
+<p>&nbsp;void show(int n)<br>
+<span style='mso-spacerun:yes'>  </span>{ System.out.print(n%10);<br>
+<span style='mso-spacerun:yes'>     </span>if(n&gt;0) show(n/10);<br>
+<span style='mso-spacerun:yes'>  </span>}</p>
+
+<p>5.&nbsp;&nbsp; Show the output that will be displayed by the call show(145);
+<br>
+void show( int n)<br>
+<span style='mso-spacerun:yes'> </span>{ System.out.print((n%10));<br>
+<span style='mso-spacerun:yes'>    </span>if(n&gt;0) show(n/10);<br>
+<span style='mso-spacerun:yes'>    </span>System.out.print((n%10));<br>
+<span style='mso-spacerun:yes'>  </span>}<br>
+6.&nbsp;&nbsp; Complete the Java code to recursively evaluate the sum: sum = 1
++ 1/2 + 1/3 +...+1/n, n &gt;= 1.<br>
+double sum(int
+n)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+// n&gt;=1<br>
+{<br>
+if (___________) <br>
+return _____________;</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; return ______ + sum(______);<br>
+}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p>
+
+<p>7.&nbsp;&nbsp; Consider the following recursive function. </p>
+
+<table class=MsoNormalTable border=0 cellpadding=0 style='mso-cellspacing:1.5pt;
+ mso-padding-alt:0cm 0cm 0cm 0cm'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td width=236 style='width:177.0pt;padding:0cm 0cm 0cm 0cm'>
+  <p class=MsoNormal>int mystery(int a, int b)<br>
+  <span style='mso-spacerun:yes'> </span>{ if (b == 0)<br>
+  <span style='mso-spacerun:yes'>    </span>return 0;<br>
+  <span style='mso-spacerun:yes'>     </span>else if (b % 2 == 0)<br>
+  <span style='mso-spacerun:yes'>      </span>return mystery(a+a, b/2);<br>
+  <span style='mso-spacerun:yes'>       </span>else<br>
+  <span style='mso-spacerun:yes'>        </span>return (mystery(a+a, b/2) + a);<br>
+  <span style='mso-spacerun:yes'> </span>} </p>
+  </td>
+ </tr>
+</table>
+
+<p style='margin:0cm;margin-bottom:.0001pt'><o:p>&nbsp;</o:p></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt;line-height:120%'>a.&nbsp;What
+values of&nbsp; a and b&nbsp; are directly handled by the stopping (base) case?
+<br>
+b.&nbsp;What are the values of <a name="OLE_LINK11" id="OLE_LINK12"></a><a
+name="OLE_LINK12" id="OLE_LINK11"></a><span style='mso-bookmark:OLE_LINK11'>mystery</span>(2,
+25) and mystery(3, 11)? Given positive integers a and b, </p>
+
+<p style='margin:0cm;margin-bottom:.0001pt;line-height:120%'><span
+style='mso-spacerun:yes'>    </span>describe what value mystery(a, b) computes.
+Answer the same question, but replace + with *. <br>
+c.&nbsp;For the call&nbsp; mystery(3, 7), how many calls to mystery will be
+made, including the original call? </p>
+
+<p>8.&nbsp;&nbsp; Consider the following recursive function. </p>
+
+<table class=MsoNormalTable border=0 cellpadding=0 style='mso-cellspacing:1.5pt;
+ mso-padding-alt:0cm 0cm 0cm 0cm'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td width=212 style='width:159.0pt;padding:0cm 0cm 0cm 0cm'>
+  <p class=MsoNormal>void ex237(int n)<br>
+  <span style='mso-spacerun:yes'>  </span>{ if (n &lt;= 0) return; <br>
+  <span style='mso-spacerun:yes'>    </span>StdOut.println(n); <br>
+  <span style='mso-spacerun:yes'>    </span>ex237(n-2); <br>
+  <span style='mso-spacerun:yes'>    </span>ex237(n-3); <br>
+  <span style='mso-spacerun:yes'>    </span>StdOut.println(n); <br>
+  <span style='mso-spacerun:yes'>  </span>} </p>
+  </td>
+ </tr>
+</table>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Give the sequence of integers printed by a
+call to ex237(6). <br>
+9.&nbsp;&nbsp; Consider the following recursive function: </p>
+
+<table class=MsoNormalTable border=0 cellpadding=0 style='mso-cellspacing:1.5pt;
+ mso-padding-alt:0cm 0cm 0cm 0cm'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td width=320 style='width:240.0pt;padding:0cm 0cm 0cm 0cm'>
+  <p class=MsoNormal>String ex238(int n)<br>
+  { <br>
+  <span style='mso-spacerun:yes'>   </span>if (n &lt;= 0) return &quot;&quot;; <br>
+  <span style='mso-spacerun:yes'>    </span>return (ex238(n-3) + n + ex238(n-2)
+  + n); <br>
+  } </p>
+  </td>
+ </tr>
+</table>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Give the value of ex238(6). <br>
+10. Prove by induction that the minimum possible number of moves needed to
+solve the towers of Hanoi satisfies the same recurrence as the number of moves
+used by our recursive solution. </p>
+
+<p><strong>Practical exercises </strong><br>
+Write Java programs to perfom the following tasks:<br>
+1.&nbsp;&nbsp; Write a recursive function that computes the sum of all numbers
+from 1 to n, where n is given as parameter. <br>
+//return the sum 1+ 2+ 3+ ...+ n<br>
+int sum(int n)<br>
+2.&nbsp;&nbsp; Write a recursive function that finds and returns the minimum
+element in an array, where the array and its size are given as parameters. <br>
+//return the minimum element in a[]<br>
+int findmin(int a[], int n)<br>
+3.&nbsp;&nbsp; Write a recursive function that computes and returns the sum of
+all elements in an array, where the array and its size are given as parameters.
+<br>
+//return the sum of all elements in a[]<br>
+int findsum(int a[], int n)<br>
+4.&nbsp;&nbsp; Write a recursive function that determines whether an array is a
+palindrome, where the array and its size are given as parameters. <br>
+//returns 1 if a[] is a palindrome, 0 otherwise. The string a is palindrome if
+it is the same as its reverse. <br>
+int ispalindrome(char a[], int n)<br>
+5.&nbsp;&nbsp; Write a recursive function that searches for a target in a
+sorted array using binay search, where the array, its size and the target are
+given as parameters. <br>
+6.&nbsp;&nbsp; Implement the Greatest Common Divisor algorithm as recursive method
+<strong>GCD</strong>. Use recursion. Do NOT use a loop. <br>
+<img border=0 width=221 height=43 id="_x0000_i1025"
+src="images/03/03-Recursion_clip_image001.gif"><br>
+7.&nbsp;&nbsp; Implement the <strong>power</strong> function recursively <br>
+<img border=0 width=266 height=43 id="_x0000_i1026"
+src="images/03/03-Recursion_clip_image002.gif"></p>
+
+<p class=MsoNormal><br clear=all style='mso-special-character:line-break'>
+</p>
+
+<p>8. Implement the factorial function recursively as <strong>fact</strong><br>
+<img border=0 width=205 height=43 id="_x0000_i1027"
+src="images/03/03-Recursion_clip_image003.gif"><br>
+9.&nbsp;&nbsp; Implement Fibonacci recursively as <strong>f</strong><br>
+<img border=0 width=236 height=43 id="_x0000_i1028"
+src="images/03/03-Recursion_clip_image004.gif"><br>
+10. Write recursive method <strong>addReciprocals </strong>that takes an
+integer as a parameter and returns the sum of the first n reciprocals. <br>
+addReciprocals(n) returns (1.0 + 1.0/2.0 + 1.0/3.0 + 1.0/4.0 + ... + 1.0/n).</p>
+
+<p>11.&nbsp; <strong>Stirling numbers</strong>: A stirling number of the first
+kind is defined as follows </p>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo3;tab-stops:list 36.0pt'>s(0,0) = 1</li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo3;tab-stops:list 36.0pt'>s(n,0) = 0, for all n &gt;
+     0</li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo3;tab-stops:list 36.0pt'>s(n+1,k) = s(n,k-1) -
+     n*s(n,k), for all n <strong>≥</strong>0 and k&gt;0</li>
+</ul>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Write a recursive routine to calculate
+stirling numbers of the first kind. <br>
+12. <strong>Tree height.</strong> Given a labeled binary tree (represented by a
+pointer to a TreeNode) calculate its height. <br>
+<strong>13. Tree size.</strong> Given a labeled binary tree (represented by a
+pointer to a TreeNode) calculate its size. </p>
+
+<p>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,4 @@
+A   B   C   F   D   E   
+A   C   F   E
+0   9   11   20
+

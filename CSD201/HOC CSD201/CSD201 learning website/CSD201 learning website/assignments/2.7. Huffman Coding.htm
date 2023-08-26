@@ -1,0 +1,2220 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 12">
+<meta name=Originator content="Microsoft Word 12">
+<link rel=File-List href="2.7.%20Huffman%20Coding_files/filelist.xml">
+<link rel=Edit-Time-Data href="2.7.%20Huffman%20Coding_files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>Huffman Coding: A CS2 Assignment</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>vdc</o:Author>
+  <o:LastAuthor>vdc</o:LastAuthor>
+  <o:Revision>5</o:Revision>
+  <o:TotalTime>1</o:TotalTime>
+  <o:Created>2016-10-05T17:56:00Z</o:Created>
+  <o:LastSaved>2016-10-05T18:19:00Z</o:LastSaved>
+  <o:Pages>2</o:Pages>
+  <o:Words>3593</o:Words>
+  <o:Characters>20482</o:Characters>
+  <o:Lines>170</o:Lines>
+  <o:Paragraphs>48</o:Paragraphs>
+  <o:CharactersWithSpaces>24027</o:CharactersWithSpaces>
+  <o:Version>12.00</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]-->
+<link rel=themeData href="2.7.%20Huffman%20Coding_files/themedata.thmx">
+<link rel=colorSchemeMapping
+href="2.7.%20Huffman%20Coding_files/colorschememapping.xml">
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:Zoom>90</w:Zoom>
+  <w:TrackMoves>false</w:TrackMoves>
+  <w:TrackFormatting/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>EN-US</w:LidThemeOther>
+  <w:LidThemeAsian>X-NONE</w:LidThemeAsian>
+  <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:SplitPgBreakAndParaMark/>
+   <w:DontVertAlignCellWithSp/>
+   <w:DontBreakConstrainedForcedTables/>
+   <w:DontVertAlignInTxbx/>
+   <w:Word11KerningPairs/>
+   <w:CachedColBalance/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="&#45;-"/>
+   <m:smallFrac m:val="off"/>
+   <m:dispDef/>
+   <m:lMargin m:val="0"/>
+   <m:rMargin m:val="0"/>
+   <m:defJc m:val="centerGroup"/>
+   <m:wrapIndent m:val="1440"/>
+   <m:intLim m:val="subSup"/>
+   <m:naryLim m:val="undOvr"/>
+  </m:mathPr></w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="true"
+  DefSemiHidden="true" DefQFormat="false" DefPriority="99"
+  LatentStyleCount="267">
+  <w:LsdException Locked="false" Priority="0" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Normal"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="heading 1"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="heading 2"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="heading 3"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 4"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 5"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 6"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 7"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 8"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 9"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 1"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 2"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 3"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 4"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 5"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 6"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 7"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 8"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 9"/>
+  <w:LsdException Locked="false" Priority="35" QFormat="true" Name="caption"/>
+  <w:LsdException Locked="false" Priority="10" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Title"/>
+  <w:LsdException Locked="false" Priority="1" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" Priority="11" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtitle"/>
+  <w:LsdException Locked="false" Priority="22" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Strong"/>
+  <w:LsdException Locked="false" Priority="20" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Emphasis"/>
+  <w:LsdException Locked="false" Priority="59" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Table Grid"/>
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Placeholder Text"/>
+  <w:LsdException Locked="false" Priority="1" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="No Spacing"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 1"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 1"/>
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Revision"/>
+  <w:LsdException Locked="false" Priority="34" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="List Paragraph"/>
+  <w:LsdException Locked="false" Priority="29" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Quote"/>
+  <w:LsdException Locked="false" Priority="30" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Quote"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 1"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 1"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 2"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 2"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 2"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 3"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 3"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 3"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 4"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 4"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 4"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 5"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 5"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 5"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 6"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 6"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 6"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="19" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Emphasis"/>
+  <w:LsdException Locked="false" Priority="21" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Emphasis"/>
+  <w:LsdException Locked="false" Priority="31" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Reference"/>
+  <w:LsdException Locked="false" Priority="32" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Reference"/>
+  <w:LsdException Locked="false" Priority="33" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Book Title"/>
+  <w:LsdException Locked="false" Priority="37" Name="Bibliography"/>
+  <w:LsdException Locked="false" Priority="39" QFormat="true" Name="TOC Heading"/>
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;
+	mso-font-charset:1;
+	mso-generic-font-family:roman;
+	mso-font-format:other;
+	mso-font-pitch:variable;
+	mso-font-signature:0 0 0 0 0 0;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-520081665 -1073717157 41 0 66047 0;}
+@font-face
+	{font-family:Consolas;
+	panose-1:2 11 6 9 2 2 4 3 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:modern;
+	mso-font-pitch:fixed;
+	mso-font-signature:-520092929 1073806591 9 0 415 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;}
+h1
+	{mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Heading 1 Char";
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	mso-outline-level:1;
+	font-size:24.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	font-weight:bold;}
+h2
+	{mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Heading 2 Char";
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	mso-outline-level:2;
+	font-size:18.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	font-weight:bold;}
+h3
+	{mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Heading 3 Char";
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	mso-outline-level:3;
+	font-size:13.5pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	font-weight:bold;}
+a:link, span.MsoHyperlink
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+p
+	{mso-style-priority:99;
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;}
+address
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-link:"HTML Address Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	font-style:italic;}
+pre
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-link:"HTML Preformatted Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-link:"Balloon Text Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:8.0pt;
+	font-family:"Tahoma","sans-serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;}
+span.HTMLAddressChar
+	{mso-style-name:"HTML Address Char";
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"HTML Address";
+	mso-ansi-font-size:12.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	mso-ascii-font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	mso-hansi-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	font-style:italic;}
+span.Heading1Char
+	{mso-style-name:"Heading 1 Char";
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Heading 1";
+	mso-ansi-font-size:14.0pt;
+	mso-bidi-font-size:14.0pt;
+	font-family:"Cambria","serif";
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	color:#365F91;
+	mso-themecolor:accent1;
+	mso-themeshade:191;
+	font-weight:bold;}
+span.Heading2Char
+	{mso-style-name:"Heading 2 Char";
+	mso-style-noshow:yes;
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Heading 2";
+	mso-ansi-font-size:13.0pt;
+	mso-bidi-font-size:13.0pt;
+	font-family:"Cambria","serif";
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	color:#4F81BD;
+	mso-themecolor:accent1;
+	font-weight:bold;}
+span.Heading3Char
+	{mso-style-name:"Heading 3 Char";
+	mso-style-noshow:yes;
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Heading 3";
+	mso-ansi-font-size:12.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:"Cambria","serif";
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	color:#4F81BD;
+	mso-themecolor:accent1;
+	font-weight:bold;}
+span.HTMLPreformattedChar
+	{mso-style-name:"HTML Preformatted Char";
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"HTML Preformatted";
+	font-family:Consolas;
+	mso-ascii-font-family:Consolas;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	mso-hansi-font-family:Consolas;
+	mso-bidi-font-family:Consolas;}
+span.BalloonTextChar
+	{mso-style-name:"Balloon Text Char";
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Balloon Text";
+	mso-ansi-font-size:8.0pt;
+	mso-bidi-font-size:8.0pt;
+	font-family:"Tahoma","sans-serif";
+	mso-ascii-font-family:Tahoma;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	mso-hansi-font-family:Tahoma;
+	mso-bidi-font-family:Tahoma;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	mso-default-props:yes;
+	font-size:10.0pt;
+	mso-ansi-font-size:10.0pt;
+	mso-bidi-font-size:10.0pt;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:160849964;
+	mso-list-template-ids:-1627994892;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l0:level2
+	{mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level3
+	{mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level4
+	{mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level5
+	{mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level6
+	{mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level7
+	{mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level8
+	{mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level9
+	{mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1
+	{mso-list-id:650670004;
+	mso-list-template-ids:1525156380;}
+@list l1:level1
+	{mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level2
+	{mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level3
+	{mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level4
+	{mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level5
+	{mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level6
+	{mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level7
+	{mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level8
+	{mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level9
+	{mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l2
+	{mso-list-id:1056860481;
+	mso-list-template-ids:-2034868708;}
+@list l2:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l2:level2
+	{mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l2:level3
+	{mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l2:level4
+	{mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l2:level5
+	{mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l2:level6
+	{mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l2:level7
+	{mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l2:level8
+	{mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l2:level9
+	{mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l3
+	{mso-list-id:1292901278;
+	mso-list-template-ids:-1918602214;}
+@list l3:level1
+	{mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l3:level2
+	{mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l3:level3
+	{mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l3:level4
+	{mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l3:level5
+	{mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l3:level6
+	{mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l3:level7
+	{mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l3:level8
+	{mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l3:level9
+	{mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l4
+	{mso-list-id:1571888057;
+	mso-list-template-ids:-1992628668;}
+@list l4:level1
+	{mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l4:level2
+	{mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l4:level3
+	{mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l4:level4
+	{mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l4:level5
+	{mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l4:level6
+	{mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l4:level7
+	{mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l4:level8
+	{mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l4:level9
+	{mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman","serif";}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="4098"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body bgcolor=white lang=EN-US link=blue vlink=purple style='tab-interval:.5in'>
+
+<div class=WordSection1>
+
+<h1><span style='mso-fareast-font-family:"Times New Roman"'>CSD201 Assignment
+2: Huffman Coding<o:p></o:p></span></h1>
+
+<h2><a name=huffcode><span style='mso-fareast-font-family:"Times New Roman"'>From
+ASCII Coding to Huffman Coding<o:p></o:p></span></a></h2>
+
+<span style='mso-bookmark:huffcode'></span>
+
+<p>Many programming languages use ASCII coding for characters (ASCII stands for
+American Standard Code for Information Interchange). Some recent languages,
+e.g., Java, use UNICODE which, because it can encode a bigger set of
+characters, is more useful for languages like Japanese and Chinese which have a
+larger set of characters than are used in English. </p>
+
+<p>We'll use ASCII encoding of characters as an example. In ASCII, every
+character is encoded with the same number of bits: 8 bits per character. Since
+there are 256 different values that can be encoded with 8 bits, there are
+potentially 256 different characters in the ASCII character set. The common
+characters, e.g., alphanumeric characters, punctuation, control characters,
+etc., use only 7 bits; there are 128 different characters that can be encoded
+with 7 bits. In C++ for example, the type <em>char</em> is divided into
+subtypes unsigned-char and (the default signed) char. As we'll see, Huffman
+coding compresses data by using fewer bits to encode more frequently occurring
+characters so that not all characters are encoded with 8 bits. In Java there
+are no unsigned types and <em>char</em> values use 16 bits (Unicode compared to
+ASCII). Substantial compression results regardless of the character-encoding
+used by a language or platform. </p>
+
+<h3><span style='mso-fareast-font-family:"Times New Roman"'>A Simple Coding
+Example<o:p></o:p></span></h3>
+
+<p>We'll look at how the string &quot;go go gophers&quot; is encoded in ASCII,
+how we might save bits using a simpler coding scheme, and how Huffman coding is
+used to compress the data resulting in still more savings. </p>
+
+<p>With an ASCII encoding (8 bits per character) the 13 character string
+&quot;go go gophers&quot; requires 104 bits. The table below on the left shows
+how the coding works. </p>
+
+<div align=center>
+
+<table class=MsoNormalTable border=0 cellpadding=0 style='mso-cellspacing:1.5pt;
+ mso-yfti-tbllook:1184;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center'><a name=codetable><strong><span
+  style='mso-fareast-font-family:"Times New Roman"'>coding a message</span></strong></a><span
+  style='mso-bookmark:codetable'><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='mso-bookmark:codetable'><b><span style='mso-fareast-font-family:"Times New Roman"'>ASCII
+  coding <o:p></o:p></span></b></span></p>
+  </td>
+  <span style='mso-bookmark:codetable'></span>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='mso-bookmark:codetable'><b><span style='mso-fareast-font-family:"Times New Roman"'>&nbsp;
+  <o:p></o:p></span></b></span></p>
+  </td>
+  <span style='mso-bookmark:codetable'></span>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='mso-bookmark:codetable'><b><span style='mso-fareast-font-family:"Times New Roman"'>3-bit
+  coding <o:p></o:p></span></b></span></p>
+  </td>
+  <span style='mso-bookmark:codetable'></span>
+ </tr>
+ <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes'>
+  <td width="40%" style='width:40.0%;padding:.75pt .75pt .75pt .75pt'>
+  <table class=MsoNormalTable border=0 cellpadding=0 style='mso-cellspacing:
+   1.5pt;mso-yfti-tbllook:1184;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+   <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal align=center style='text-align:center'><span
+    style='mso-bookmark:codetable'><b><span style='mso-fareast-font-family:
+    "Times New Roman"'>char<o:p></o:p></span></b></span></p>
+    </td>
+    <span style='mso-bookmark:codetable'></span>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal align=center style='text-align:center'><span
+    style='mso-bookmark:codetable'><b><span style='mso-fareast-font-family:
+    "Times New Roman"'>ASCII <o:p></o:p></span></b></span></p>
+    </td>
+    <span style='mso-bookmark:codetable'></span>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal align=center style='text-align:center'><span
+    style='mso-bookmark:codetable'><b><span style='mso-fareast-font-family:
+    "Times New Roman"'>binary<o:p></o:p></span></b></span></p>
+    </td>
+    <span style='mso-bookmark:codetable'></span>
+   </tr>
+   <tr style='mso-yfti-irow:1'>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal align=right style='text-align:right'><span
+    style='mso-bookmark:codetable'><span style='mso-fareast-font-family:"Times New Roman"'>g<o:p></o:p></span></span></p>
+    </td>
+    <span style='mso-bookmark:codetable'></span>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal align=right style='text-align:right'><span
+    style='mso-bookmark:codetable'><span style='mso-fareast-font-family:"Times New Roman"'>103
+    <o:p></o:p></span></span></p>
+    </td>
+    <span style='mso-bookmark:codetable'></span>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal align=right style='text-align:right'><span
+    style='mso-bookmark:codetable'><span style='mso-fareast-font-family:"Times New Roman"'>1100111<o:p></o:p></span></span></p>
+    </td>
+    <span style='mso-bookmark:codetable'></span>
+   </tr>
+   <tr style='mso-yfti-irow:2'>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal align=right style='text-align:right'><span
+    style='mso-bookmark:codetable'><span style='mso-fareast-font-family:"Times New Roman"'>o<o:p></o:p></span></span></p>
+    </td>
+    <span style='mso-bookmark:codetable'></span>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal align=right style='text-align:right'><span
+    style='mso-bookmark:codetable'><span style='mso-fareast-font-family:"Times New Roman"'>111
+    <o:p></o:p></span></span></p>
+    </td>
+    <span style='mso-bookmark:codetable'></span>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal align=right style='text-align:right'><span
+    style='mso-bookmark:codetable'><span style='mso-fareast-font-family:"Times New Roman"'>1101111
+    <o:p></o:p></span></span></p>
+    </td>
+    <span style='mso-bookmark:codetable'></span>
+   </tr>
+   <tr style='mso-yfti-irow:3'>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal align=right style='text-align:right'><span
+    style='mso-bookmark:codetable'><span style='mso-fareast-font-family:"Times New Roman"'>p<o:p></o:p></span></span></p>
+    </td>
+    <span style='mso-bookmark:codetable'></span>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal align=right style='text-align:right'><span
+    style='mso-bookmark:codetable'><span style='mso-fareast-font-family:"Times New Roman"'>112
+    <o:p></o:p></span></span></p>
+    </td>
+    <span style='mso-bookmark:codetable'></span>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal align=right style='text-align:right'><span
+    style='mso-bookmark:codetable'><span style='mso-fareast-font-family:"Times New Roman"'>1110000
+    <o:p></o:p></span></span></p>
+    </td>
+    <span style='mso-bookmark:codetable'></span>
+   </tr>
+   <tr style='mso-yfti-irow:4'>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal align=right style='text-align:right'><span
+    style='mso-bookmark:codetable'><span style='mso-fareast-font-family:"Times New Roman"'>h<o:p></o:p></span></span></p>
+    </td>
+    <span style='mso-bookmark:codetable'></span>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal align=right style='text-align:right'><span
+    style='mso-bookmark:codetable'><span style='mso-fareast-font-family:"Times New Roman"'>104
+    <o:p></o:p></span></span></p>
+    </td>
+    <span style='mso-bookmark:codetable'></span>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal align=right style='text-align:right'><span
+    style='mso-bookmark:codetable'><span style='mso-fareast-font-family:"Times New Roman"'>1101000
+    <o:p></o:p></span></span></p>
+    </td>
+    <span style='mso-bookmark:codetable'></span>
+   </tr>
+   <tr style='mso-yfti-irow:5'>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal align=right style='text-align:right'><span
+    style='mso-bookmark:codetable'><span style='mso-fareast-font-family:"Times New Roman"'>e<o:p></o:p></span></span></p>
+    </td>
+    <span style='mso-bookmark:codetable'></span>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal align=right style='text-align:right'><span
+    style='mso-bookmark:codetable'><span style='mso-fareast-font-family:"Times New Roman"'>101
+    <o:p></o:p></span></span></p>
+    </td>
+    <span style='mso-bookmark:codetable'></span>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal align=right style='text-align:right'><span
+    style='mso-bookmark:codetable'><span style='mso-fareast-font-family:"Times New Roman"'>1100101
+    <o:p></o:p></span></span></p>
+    </td>
+    <span style='mso-bookmark:codetable'></span>
+   </tr>
+   <tr style='mso-yfti-irow:6'>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal align=right style='text-align:right'><span
+    style='mso-bookmark:codetable'><span style='mso-fareast-font-family:"Times New Roman"'>r<o:p></o:p></span></span></p>
+    </td>
+    <span style='mso-bookmark:codetable'></span>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal align=right style='text-align:right'><span
+    style='mso-bookmark:codetable'><span style='mso-fareast-font-family:"Times New Roman"'>114
+    <o:p></o:p></span></span></p>
+    </td>
+    <span style='mso-bookmark:codetable'></span>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal align=right style='text-align:right'><span
+    style='mso-bookmark:codetable'><span style='mso-fareast-font-family:"Times New Roman"'>1110010
+    <o:p></o:p></span></span></p>
+    </td>
+    <span style='mso-bookmark:codetable'></span>
+   </tr>
+   <tr style='mso-yfti-irow:7'>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal align=right style='text-align:right'><span
+    style='mso-bookmark:codetable'><span style='mso-fareast-font-family:"Times New Roman"'>s<o:p></o:p></span></span></p>
+    </td>
+    <span style='mso-bookmark:codetable'></span>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal align=right style='text-align:right'><span
+    style='mso-bookmark:codetable'><span style='mso-fareast-font-family:"Times New Roman"'>115
+    <o:p></o:p></span></span></p>
+    </td>
+    <span style='mso-bookmark:codetable'></span>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal align=right style='text-align:right'><span
+    style='mso-bookmark:codetable'><span style='mso-fareast-font-family:"Times New Roman"'>1110011
+    <o:p></o:p></span></span></p>
+    </td>
+    <span style='mso-bookmark:codetable'></span>
+   </tr>
+   <tr style='mso-yfti-irow:8;mso-yfti-lastrow:yes'>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal align=right style='text-align:right'><span
+    style='mso-bookmark:codetable'><span style='mso-fareast-font-family:"Times New Roman"'>space<o:p></o:p></span></span></p>
+    </td>
+    <span style='mso-bookmark:codetable'></span>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal align=right style='text-align:right'><span
+    style='mso-bookmark:codetable'><span style='mso-fareast-font-family:"Times New Roman"'>32
+    <o:p></o:p></span></span></p>
+    </td>
+    <span style='mso-bookmark:codetable'></span>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal align=right style='text-align:right'><span
+    style='mso-bookmark:codetable'><span style='mso-fareast-font-family:"Times New Roman"'>1000000
+    <o:p></o:p></span></span></p>
+    </td>
+    <span style='mso-bookmark:codetable'></span>
+   </tr>
+  </table>
+  <span style='mso-bookmark:codetable'></span></td>
+  <span style='mso-bookmark:codetable'></span>
+  <td width="20%" style='width:20.0%;padding:.75pt .75pt .75pt .75pt'><!-- central column, just fill --><span
+  style='mso-bookmark:codetable'></span></td>
+  <span style='mso-bookmark:codetable'></span>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <div align=right>
+  <table class=MsoNormalTable border=0 cellpadding=0 style='mso-cellspacing:
+   1.5pt;mso-yfti-tbllook:1184;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+   <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal align=center style='text-align:center'><span
+    style='mso-bookmark:codetable'><b><span style='mso-fareast-font-family:
+    "Times New Roman"'>char<o:p></o:p></span></b></span></p>
+    </td>
+    <span style='mso-bookmark:codetable'></span>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal align=center style='text-align:center'><span
+    style='mso-bookmark:codetable'><b><span style='mso-fareast-font-family:
+    "Times New Roman"'>code <o:p></o:p></span></b></span></p>
+    </td>
+    <span style='mso-bookmark:codetable'></span>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal align=center style='text-align:center'><span
+    style='mso-bookmark:codetable'><b><span style='mso-fareast-font-family:
+    "Times New Roman"'>binary<o:p></o:p></span></b></span></p>
+    </td>
+    <span style='mso-bookmark:codetable'></span>
+   </tr>
+   <tr style='mso-yfti-irow:1'>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal align=right style='text-align:right'><span
+    style='mso-bookmark:codetable'><span style='mso-fareast-font-family:"Times New Roman"'>g<o:p></o:p></span></span></p>
+    </td>
+    <span style='mso-bookmark:codetable'></span>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal align=right style='text-align:right'><span
+    style='mso-bookmark:codetable'><span style='mso-fareast-font-family:"Times New Roman"'>0
+    <o:p></o:p></span></span></p>
+    </td>
+    <span style='mso-bookmark:codetable'></span>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal align=right style='text-align:right'><span
+    style='mso-bookmark:codetable'><span style='mso-fareast-font-family:"Times New Roman"'>000
+    <o:p></o:p></span></span></p>
+    </td>
+    <span style='mso-bookmark:codetable'></span>
+   </tr>
+   <tr style='mso-yfti-irow:2'>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal align=right style='text-align:right'><span
+    style='mso-bookmark:codetable'><span style='mso-fareast-font-family:"Times New Roman"'>o<o:p></o:p></span></span></p>
+    </td>
+    <span style='mso-bookmark:codetable'></span>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal align=right style='text-align:right'><span
+    style='mso-bookmark:codetable'><span style='mso-fareast-font-family:"Times New Roman"'>1
+    <o:p></o:p></span></span></p>
+    </td>
+    <span style='mso-bookmark:codetable'></span>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal align=right style='text-align:right'><span
+    style='mso-bookmark:codetable'><span style='mso-fareast-font-family:"Times New Roman"'>001
+    <o:p></o:p></span></span></p>
+    </td>
+    <span style='mso-bookmark:codetable'></span>
+   </tr>
+   <tr style='mso-yfti-irow:3'>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal align=right style='text-align:right'><span
+    style='mso-bookmark:codetable'><span style='mso-fareast-font-family:"Times New Roman"'>p<o:p></o:p></span></span></p>
+    </td>
+    <span style='mso-bookmark:codetable'></span>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal align=right style='text-align:right'><span
+    style='mso-bookmark:codetable'><span style='mso-fareast-font-family:"Times New Roman"'>2
+    <o:p></o:p></span></span></p>
+    </td>
+    <span style='mso-bookmark:codetable'></span>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal align=right style='text-align:right'><span
+    style='mso-bookmark:codetable'><span style='mso-fareast-font-family:"Times New Roman"'>010
+    <o:p></o:p></span></span></p>
+    </td>
+    <span style='mso-bookmark:codetable'></span>
+   </tr>
+   <tr style='mso-yfti-irow:4'>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal align=right style='text-align:right'><span
+    style='mso-bookmark:codetable'><span style='mso-fareast-font-family:"Times New Roman"'>h<o:p></o:p></span></span></p>
+    </td>
+    <span style='mso-bookmark:codetable'></span>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal align=right style='text-align:right'><span
+    style='mso-bookmark:codetable'><span style='mso-fareast-font-family:"Times New Roman"'>3
+    <o:p></o:p></span></span></p>
+    </td>
+    <span style='mso-bookmark:codetable'></span>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal align=right style='text-align:right'><span
+    style='mso-bookmark:codetable'><span style='mso-fareast-font-family:"Times New Roman"'>011
+    <o:p></o:p></span></span></p>
+    </td>
+    <span style='mso-bookmark:codetable'></span>
+   </tr>
+   <tr style='mso-yfti-irow:5'>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal align=right style='text-align:right'><span
+    style='mso-bookmark:codetable'><span style='mso-fareast-font-family:"Times New Roman"'>e<o:p></o:p></span></span></p>
+    </td>
+    <span style='mso-bookmark:codetable'></span>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal align=right style='text-align:right'><span
+    style='mso-bookmark:codetable'><span style='mso-fareast-font-family:"Times New Roman"'>4
+    <o:p></o:p></span></span></p>
+    </td>
+    <span style='mso-bookmark:codetable'></span>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal align=right style='text-align:right'><span
+    style='mso-bookmark:codetable'><span style='mso-fareast-font-family:"Times New Roman"'>100
+    <o:p></o:p></span></span></p>
+    </td>
+    <span style='mso-bookmark:codetable'></span>
+   </tr>
+   <tr style='mso-yfti-irow:6'>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal align=right style='text-align:right'><span
+    style='mso-bookmark:codetable'><span style='mso-fareast-font-family:"Times New Roman"'>r<o:p></o:p></span></span></p>
+    </td>
+    <span style='mso-bookmark:codetable'></span>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal align=right style='text-align:right'><span
+    style='mso-bookmark:codetable'><span style='mso-fareast-font-family:"Times New Roman"'>5
+    <o:p></o:p></span></span></p>
+    </td>
+    <span style='mso-bookmark:codetable'></span>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal align=right style='text-align:right'><span
+    style='mso-bookmark:codetable'><span style='mso-fareast-font-family:"Times New Roman"'>101
+    <o:p></o:p></span></span></p>
+    </td>
+    <span style='mso-bookmark:codetable'></span>
+   </tr>
+   <tr style='mso-yfti-irow:7'>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal align=right style='text-align:right'><span
+    style='mso-bookmark:codetable'><span style='mso-fareast-font-family:"Times New Roman"'>s<o:p></o:p></span></span></p>
+    </td>
+    <span style='mso-bookmark:codetable'></span>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal align=right style='text-align:right'><span
+    style='mso-bookmark:codetable'><span style='mso-fareast-font-family:"Times New Roman"'>6
+    <o:p></o:p></span></span></p>
+    </td>
+    <span style='mso-bookmark:codetable'></span>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal align=right style='text-align:right'><span
+    style='mso-bookmark:codetable'><span style='mso-fareast-font-family:"Times New Roman"'>110
+    <o:p></o:p></span></span></p>
+    </td>
+    <span style='mso-bookmark:codetable'></span>
+   </tr>
+   <tr style='mso-yfti-irow:8;mso-yfti-lastrow:yes'>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal align=right style='text-align:right'><span
+    style='mso-bookmark:codetable'><span style='mso-fareast-font-family:"Times New Roman"'>space<o:p></o:p></span></span></p>
+    </td>
+    <span style='mso-bookmark:codetable'></span>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal align=right style='text-align:right'><span
+    style='mso-bookmark:codetable'><span style='mso-fareast-font-family:"Times New Roman"'>7
+    <o:p></o:p></span></span></p>
+    </td>
+    <span style='mso-bookmark:codetable'></span>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal align=right style='text-align:right'><span
+    style='mso-bookmark:codetable'><span style='mso-fareast-font-family:"Times New Roman"'>111
+    <o:p></o:p></span></span></p>
+    </td>
+    <span style='mso-bookmark:codetable'></span>
+   </tr>
+  </table>
+  </div>
+  <span style='mso-bookmark:codetable'></span></td>
+  <span style='mso-bookmark:codetable'></span>
+ </tr>
+</table>
+
+</div>
+
+<span style='mso-bookmark:codetable'></span>
+
+<p>The string &quot;go go gophers&quot; would be written (coded numerically) as
+103 111 32 103 111 32 103 111 112 104 101 114 115. Although not easily readable
+by humans, this would be written as the following stream of bits (the spaces
+would not be written, just the 0's and 1's) </p>
+
+<p><span style='font-size:10.0pt'>1100111 1101111 1100000 1100111 1101111
+1000000 1100111 1101111 1110000 1101000 1100101 1110010 1110011 </span></p>
+
+<p>Since there are only eight different characters in &quot;go go
+gophers&quot;, it's possible to use only 3 bits to encode the different
+characters. We might, for example, use the encoding in the table on the right
+above, though other 3-bit encodings are possible. </p>
+
+<p>Now the string &quot;go go gophers&quot; would be encoded as 0 1 7 0 1 7 0 1
+2 3 4 5 6 or, as bits: </p>
+
+<p><a name=3bit><span style='font-size:10.0pt'>000 001 111 000 001 111 000 001
+010 011 100 101 110 111 </span></a></p>
+
+<p>By using three bits per character, the string &quot;go go gophers&quot; uses
+a total of 39 bits instead of 104 bits. More bits can be saved if we use fewer
+than three bits to encode characters like g, o, and space that occur frequently
+and more than three bits to encode characters like e, p, h, r, and s that occur
+less frequently in &quot;go go gophers&quot;. This is the basic idea behind
+Huffman coding: to use fewer bits for more frequently occurring characters.
+We'll see how this is done using a tree that stores characters at the leaves,
+and whose root-to-leaf paths provide the bit sequence used to encode the
+characters. </p>
+
+<h3><span style='mso-fareast-font-family:"Times New Roman"'>Towards a Coding
+Tree<o:p></o:p></span></h3>
+
+<div align=center>
+
+<table class=MsoNormalTable border=0 cellpadding=0 style='mso-cellspacing:1.5pt;
+ mso-yfti-tbllook:1184;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td colspan=2 style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center'><strong><span
+  style='mso-fareast-font-family:"Times New Roman"'>A tree view of the ASCII
+  character set</span></strong><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes'>
+  <td width="55%" style='width:55.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p>Using a tree (actually a binary trie, more on that later) all characters
+  are stored at the leaves of a complete tree. In the diagram to the right, the
+  tree has eight levels meaning that the root-to-leaf path always has seven
+  edges. A left-edge (black in the diagram) is numbered 0, a right-edge (blue
+  in the diagram) is numbered 1. The ASCII code for any character/leaf is
+  obtained by following the root-to-leaf path and catening the 0's and 1's. For
+  example, the character 'a', which has ASCII value 97 (1100001 in binary), is
+  shown with root-to-leaf path of <em>right-right-left-left-left-left-right</em>.
+  </p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman";
+  mso-no-proof:yes'><img width=426 height=330 id="_x0000_i1035"
+  src="2.7.%20Huffman%20Coding_files/asciitree.jpg" alt="*"></span><span
+  style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p>The structure of the tree can be used to determine the coding of any leaf by
+using the 0/1 edge convention described. If we use a different tree, we get a
+different coding. As an example, the tree below on the right yields the coding
+shown on the left. </p>
+
+<table class=MsoNormalTable border=0 cellpadding=0 style='mso-cellspacing:1.5pt;
+ mso-yfti-tbllook:1184;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td width="40%" style='width:40.0%;padding:.75pt .75pt .75pt .75pt'>
+  <table class=MsoNormalTable border=0 cellpadding=0 style='mso-cellspacing:
+   1.5pt;mso-yfti-tbllook:1184;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+   <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal align=center style='text-align:center'><a name=hufftree><b><span
+    style='mso-fareast-font-family:"Times New Roman"'>char<o:p></o:p></span></b></a></p>
+    </td>
+    <span style='mso-bookmark:hufftree'></span>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal align=center style='text-align:center'><span
+    style='mso-bookmark:hufftree'><b><span style='mso-fareast-font-family:"Times New Roman"'>binary<o:p></o:p></span></b></span></p>
+    </td>
+    <span style='mso-bookmark:hufftree'></span>
+   </tr>
+   <tr style='mso-yfti-irow:1'>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal><span style='mso-bookmark:hufftree'><span
+    style='mso-fareast-font-family:"Times New Roman"'>'g'<o:p></o:p></span></span></p>
+    </td>
+    <span style='mso-bookmark:hufftree'></span>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal align=right style='text-align:right'><span
+    style='mso-bookmark:hufftree'><span style='mso-fareast-font-family:"Times New Roman"'>10
+    <o:p></o:p></span></span></p>
+    </td>
+    <span style='mso-bookmark:hufftree'></span>
+   </tr>
+   <tr style='mso-yfti-irow:2'>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal><span style='mso-bookmark:hufftree'><span
+    style='mso-fareast-font-family:"Times New Roman"'>'o'<o:p></o:p></span></span></p>
+    </td>
+    <span style='mso-bookmark:hufftree'></span>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal align=right style='text-align:right'><span
+    style='mso-bookmark:hufftree'><span style='mso-fareast-font-family:"Times New Roman"'>11
+    <o:p></o:p></span></span></p>
+    </td>
+    <span style='mso-bookmark:hufftree'></span>
+   </tr>
+   <tr style='mso-yfti-irow:3'>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal><span style='mso-bookmark:hufftree'><span
+    style='mso-fareast-font-family:"Times New Roman"'>'p'<o:p></o:p></span></span></p>
+    </td>
+    <span style='mso-bookmark:hufftree'></span>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal align=right style='text-align:right'><span
+    style='mso-bookmark:hufftree'><span style='mso-fareast-font-family:"Times New Roman"'>0100
+    <o:p></o:p></span></span></p>
+    </td>
+    <span style='mso-bookmark:hufftree'></span>
+   </tr>
+   <tr style='mso-yfti-irow:4'>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal><span style='mso-bookmark:hufftree'><span
+    style='mso-fareast-font-family:"Times New Roman"'>'h'<o:p></o:p></span></span></p>
+    </td>
+    <span style='mso-bookmark:hufftree'></span>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal align=right style='text-align:right'><span
+    style='mso-bookmark:hufftree'><span style='mso-fareast-font-family:"Times New Roman"'>0101
+    <o:p></o:p></span></span></p>
+    </td>
+    <span style='mso-bookmark:hufftree'></span>
+   </tr>
+   <tr style='mso-yfti-irow:5'>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal><span style='mso-bookmark:hufftree'><span
+    style='mso-fareast-font-family:"Times New Roman"'>'e'<o:p></o:p></span></span></p>
+    </td>
+    <span style='mso-bookmark:hufftree'></span>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal align=right style='text-align:right'><span
+    style='mso-bookmark:hufftree'><span style='mso-fareast-font-family:"Times New Roman"'>0110
+    <o:p></o:p></span></span></p>
+    </td>
+    <span style='mso-bookmark:hufftree'></span>
+   </tr>
+   <tr style='mso-yfti-irow:6'>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal><span style='mso-bookmark:hufftree'><span
+    style='mso-fareast-font-family:"Times New Roman"'>'r'<o:p></o:p></span></span></p>
+    </td>
+    <span style='mso-bookmark:hufftree'></span>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal align=right style='text-align:right'><span
+    style='mso-bookmark:hufftree'><span style='mso-fareast-font-family:"Times New Roman"'>0111
+    <o:p></o:p></span></span></p>
+    </td>
+    <span style='mso-bookmark:hufftree'></span>
+   </tr>
+   <tr style='mso-yfti-irow:7'>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal><span style='mso-bookmark:hufftree'><span
+    style='mso-fareast-font-family:"Times New Roman"'>'s'<o:p></o:p></span></span></p>
+    </td>
+    <span style='mso-bookmark:hufftree'></span>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal align=right style='text-align:right'><span
+    style='mso-bookmark:hufftree'><span style='mso-fareast-font-family:"Times New Roman"'>000
+    <o:p></o:p></span></span></p>
+    </td>
+    <span style='mso-bookmark:hufftree'></span>
+   </tr>
+   <tr style='mso-yfti-irow:8;mso-yfti-lastrow:yes'>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal><span style='mso-bookmark:hufftree'><span
+    style='mso-fareast-font-family:"Times New Roman"'>'&nbsp;&nbsp;'<o:p></o:p></span></span></p>
+    </td>
+    <span style='mso-bookmark:hufftree'></span>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal align=right style='text-align:right'><span
+    style='mso-bookmark:hufftree'><span style='mso-fareast-font-family:"Times New Roman"'>001
+    <o:p></o:p></span></span></p>
+    </td>
+    <span style='mso-bookmark:hufftree'></span>
+   </tr>
+  </table>
+  <span style='mso-bookmark:hufftree'></span></td>
+  <span style='mso-bookmark:hufftree'></span>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=right style='text-align:right'><span
+  style='mso-bookmark:hufftree'></span><span style='mso-bookmark:hufftree'><span
+  style='mso-fareast-font-family:"Times New Roman";mso-no-proof:yes'><img
+  width=327 height=195 id="_x0000_i1034"
+  src="2.7.%20Huffman%20Coding_files/gohuff.jpg" alt="*"></span></span><span
+  style='mso-bookmark:hufftree'><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <span style='mso-bookmark:hufftree'></span>
+ </tr>
+</table>
+
+<p><span style='mso-bookmark:hufftree'><a name=gogoencode>Using this coding, &quot;go
+go gophers&quot; is encoded (spaces wouldn't appear in the bitstream) as: </a></span></p>
+
+<span style='mso-bookmark:gogoencode'></span>
+
+<p><span style='mso-bookmark:hufftree'>10 11 001 10 11 001 10 11 0100 0101 0110
+0111 000 </span></p>
+
+<p><span style='mso-bookmark:hufftree'>This is a total of 37 bits, which saves
+two bits from the encoding in which each of the 8 characters has a 3-bit
+encoding that is </span><a href="#3bit"><span style='mso-bookmark:hufftree'>shown
+above</span><span style='mso-bookmark:hufftree'></span></a><span
+style='mso-bookmark:hufftree'>! The bits are saved by coding frequently
+occurring characters like 'g' and 'o' with fewer bits (here two bits) than
+characters that occur less frequently like 'p', 'h', 'e', and 'r'. </span></p>
+
+<p><span style='mso-bookmark:hufftree'>The character-encoding induced by the
+tree can be used to decode a stream of bits as well as encode a string into a
+stream of bits. You can try to decode the following bitstream; the answer with
+an explanation follows: </span></p>
+
+<p><span style='mso-bookmark:hufftree'>01010110011100100001000101011001110110001101101100000010101
+011001110110 </span></p>
+
+<p><span style='mso-bookmark:hufftree'>To decode the stream, start at the root
+of the encoding tree, and follow a left-branch for a 0, a right branch for a 1.
+When you reach a leaf, write the character stored at the leaf, and start again
+at the top of the tree. To start, the bits are 010101100111. This yields <em>left-right-left-right</em>
+to the letter 'h', followed (starting again at the root) with <em>left-right-right-left</em>
+to the letter 'e', followed by <em>left-right-right-right</em> to the letter
+'r'. Continuing until all the bits are processed yields </span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='mso-bookmark:hufftree'><span style='mso-fareast-font-family:"Times New Roman"'>her
+sphere goes here <o:p></o:p></span></span></p>
+
+<h3><span style='mso-bookmark:hufftree'><span style='mso-fareast-font-family:
+"Times New Roman"'>Prefix codes and Huffman Codes<o:p></o:p></span></span></h3>
+
+<p><span style='mso-bookmark:hufftree'>When all characters are stored in
+leaves, and every interior/(non-leaf) node has two children, the coding induced
+by the 0/1 convention outlined above has what is called the <em>prefix property</em>:
+no bit-sequence encoding of a character is the prefix of any other bit-sequence
+encoding. This makes it possible to decode a bitstream using the coding tree by
+following root-to-leaf paths. The tree shown above for &quot;go go
+gophers&quot; is an optimal tree: there are no other trees with the same
+characters that use fewer bits to encode the string &quot;go go gophers&quot;.
+There are other trees that use 37 bits; for example you can simply swap any
+sibling nodes and get a different encoding that uses the same number of bits.
+We need an algorithm for constructing an optimal tree which in turn yields a
+minimal per-character encoding/compression. This algorithm is called Huffman
+coding, and was invented by D. Huffman in 1952. It is an example of a greedy
+algorithm. </span></p>
+
+<h2><span style='mso-bookmark:hufftree'><span style='mso-fareast-font-family:
+"Times New Roman"'>Huffman Coding <o:p></o:p></span></span></h2>
+
+<p><span style='mso-bookmark:hufftree'>We'll use Huffman's algorithm to
+construct a tree that is used for data compression. In the </span><a
+href="#huffcode"><span style='mso-bookmark:hufftree'>previous section</span><span
+style='mso-bookmark:hufftree'></span></a><span style='mso-bookmark:hufftree'>
+we saw examples of how a stream of bits can be generated from an encoding,
+e.g., how </span><a href="#gogoencode"><span style='mso-bookmark:hufftree'>&quot;go
+go gophers&quot; was written as 1011001101100110110100010101100111000.</span><span
+style='mso-bookmark:hufftree'></span></a><span style='mso-bookmark:hufftree'>
+We also saw how the tree can be used to decode a stream of bits. We'll discuss
+how to construct the tree here. </span></p>
+
+<p><span style='mso-bookmark:hufftree'>We'll assume that each character has an
+associated weight equal to the number of times the character occurs in a file,
+for example. In the &quot;go go gophers&quot; example, the characters 'g' and
+'o' have weight 3, the space has weight 2, and the other characters have weight
+1. When compressing a file we'll need to calculate these weights, we'll ignore
+this step for now and assume that all character weights have been calculated.
+Huffman's algorithm assumes that we're building a single tree from a group (or
+forest) of trees. Initially, all the trees have a single node with a character
+and the character's weight. Trees are combined by picking two trees, and making
+a new tree from the two trees. This decreases the number of trees by one at
+each step since two trees are combined into one tree. The algorithm is as
+follows: </span></p>
+
+<ol start=1 type=1>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l3 level1 lfo1;tab-stops:list .5in'><span style='mso-bookmark:
+     hufftree'><span style='mso-fareast-font-family:"Times New Roman"'>Begin
+     with a forest of trees. All trees are one node, with the weight of the
+     tree equal to the weight of the character in the node. Characters that
+     occur most frequently have the highest weights. Characters that occur
+     least frequently have the smallest weights. <o:p></o:p></span></span></li>
+</ol>
+
+<p style='margin-left:.5in;text-indent:-.25in;mso-list:l3 level1 lfo1;
+tab-stops:list .5in'><span style='mso-bookmark:hufftree'><![if !supportLists]><span
+style='mso-fareast-font-family:"Times New Roman"'><span style='mso-list:Ignore'>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]>Repeat
+this step until there is only one tree:</span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+margin-left:.5in'><span style='mso-bookmark:hufftree'><span style='mso-fareast-font-family:
+"Times New Roman"'>Choose two trees with the smallest weights, call these trees
+T<sub>1</sub> and T<sub>2</sub>. Create a new tree whose root has a weight
+equal to the sum of the weights T<sub>1</sub> + T<sub>2</sub> and whose left
+subtree is T<sub>1</sub> and whose right subtree is T<sub>2</sub>. <o:p></o:p></span></span></p>
+
+<ol start=3 type=1>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l3 level1 lfo1;tab-stops:list .5in'><span style='mso-bookmark:
+     hufftree'><span style='mso-fareast-font-family:"Times New Roman"'>The
+     single tree left after the previous step is an optimal encoding tree. <o:p></o:p></span></span></li>
+</ol>
+
+<p><span style='mso-bookmark:hufftree'><a name=forest>We'll use the string
+&quot;go go gophers&quot; as an example. Initially we have the forest shown
+below. The nodes are shown with a weight/count that represents the number of
+times the node's character occurs. </a></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='mso-bookmark:hufftree'><span style='mso-bookmark:forest'></span></span><span
+style='mso-bookmark:hufftree'><span style='mso-bookmark:forest'><span
+style='mso-fareast-font-family:"Times New Roman";mso-no-proof:yes'><img
+border=0 width=395 height=55 id="_x0000_i1033"
+src="2.7.%20Huffman%20Coding_files/gopher1.jpg" alt="*"></span></span></span><span
+style='mso-bookmark:hufftree'><span style='mso-bookmark:forest'><span
+style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></span></span></p>
+
+<span style='mso-bookmark:forest'></span>
+
+<p><span style='mso-bookmark:hufftree'>We pick two minimal nodes. There are
+five nodes with the minimal weight of one, it doesn't matter which two we pick.
+In a program, the deterministic aspects of the program will dictate which two
+are chosen, e.g., the first two in an array, or the elements returned by a
+priority queue implementation. We create a new tree whose root is weighted by
+the sum of the weights chosen. We now have a forest of seven trees as shown
+here: </span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='mso-bookmark:hufftree'></span><span style='mso-bookmark:hufftree'><span
+style='mso-fareast-font-family:"Times New Roman";mso-no-proof:yes'><img
+border=0 width=397 height=114 id="_x0000_i1032"
+src="2.7.%20Huffman%20Coding_files/gopher2.jpg" alt="*"></span></span><span
+style='mso-bookmark:hufftree'><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+
+<p><span style='mso-bookmark:hufftree'>Choosing two minimal trees yields
+another tree with weight two as shown below. There are now six trees in the
+forest of trees that will eventually build an encoding tree. </span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='mso-bookmark:hufftree'></span><span style='mso-bookmark:hufftree'><span
+style='mso-fareast-font-family:"Times New Roman";mso-no-proof:yes'><img
+border=0 width=397 height=114 id="_x0000_i1031"
+src="2.7.%20Huffman%20Coding_files/gopher3.jpg" alt="*"></span></span><span
+style='mso-bookmark:hufftree'><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+
+<p><span style='mso-bookmark:hufftree'>Again we must choose the two trees of
+minimal weight. The lowest weight is the 'e'-node/tree with weight equal to
+one. There are three trees with weight two, we can choose any of these to
+create a new tree whose weight will be three. </span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='mso-bookmark:hufftree'></span><span style='mso-bookmark:hufftree'><span
+style='mso-fareast-font-family:"Times New Roman";mso-no-proof:yes'><img
+border=0 width=397 height=115 id="_x0000_i1030"
+src="2.7.%20Huffman%20Coding_files/gopher4.jpg" alt="*"></span></span><span
+style='mso-bookmark:hufftree'><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+
+<p><span style='mso-bookmark:hufftree'>Now there are two trees with weight
+equal to two. These are joined into a new tree whose weight is four. There are
+four trees left, one whose weight is four and three with a weight of three. </span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='mso-bookmark:hufftree'></span><span style='mso-bookmark:hufftree'><span
+style='mso-fareast-font-family:"Times New Roman";mso-no-proof:yes'><img
+border=0 width=380 height=175 id="_x0000_i1029"
+src="2.7.%20Huffman%20Coding_files/gopher5.jpg" alt="*"></span></span><span
+style='mso-bookmark:hufftree'><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+
+<p><span style='mso-bookmark:hufftree'>Two minimal (three weight) trees are joined
+into a tree whose weight is six. In the diagram below we choose the 'g' and 'o'
+trees (we could have chosen the 'g' tree and the space-'e' tree or the 'o' tree
+and the space-'e' tree.) There are three trees left. </span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='mso-bookmark:hufftree'></span><span style='mso-bookmark:hufftree'><span
+style='mso-fareast-font-family:"Times New Roman";mso-no-proof:yes'><img
+border=0 width=412 height=175 id="_x0000_i1028"
+src="2.7.%20Huffman%20Coding_files/gopher6.jpg" alt="*"></span></span><span
+style='mso-bookmark:hufftree'><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+
+<p><span style='mso-bookmark:hufftree'>The minimal trees have weights of three and
+four, these are joined into a tree whose weight is seven leaving two trees. </span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='mso-bookmark:hufftree'></span><span style='mso-bookmark:hufftree'><span
+style='mso-fareast-font-family:"Times New Roman";mso-no-proof:yes'><img
+border=0 width=378 height=236 id="_x0000_i1027"
+src="2.7.%20Huffman%20Coding_files/gopher7.jpg" alt="*"></span></span><span
+style='mso-bookmark:hufftree'><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+
+<p><span style='mso-bookmark:hufftree'>Finally, the last two trees are joined
+into a final tree whose weight is thirteen, the sum of the two weights six and
+seven. Note that this tree is different from the </span><a href="#hufftree"><span
+style='mso-bookmark:hufftree'>tree we used to illustrate Huffman coding above</span><span
+style='mso-bookmark:hufftree'></span></a><span style='mso-bookmark:hufftree'>,
+and the bit patterns for each character are different, but the total number of
+bits used to encode &quot;go go gophers&quot; is the same. </span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='mso-bookmark:hufftree'></span><span style='mso-bookmark:hufftree'><span
+style='mso-fareast-font-family:"Times New Roman";mso-no-proof:yes'><img
+border=0 width=399 height=287 id="_x0000_i1026"
+src="2.7.%20Huffman%20Coding_files/gopher8.jpg" alt="*"></span></span><span
+style='mso-bookmark:hufftree'><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+
+<p><span style='mso-bookmark:hufftree'>The character encoding induced by the
+last tree is shown below where again, 0 is used for left edges and 1 for right
+edges. </span></p>
+
+<div align=center>
+
+<table class=MsoNormalTable border=0 cellpadding=0 style='mso-cellspacing:1.5pt;
+ mso-yfti-tbllook:1184;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='mso-bookmark:hufftree'><b><span style='mso-fareast-font-family:"Times New Roman"'>char<o:p></o:p></span></b></span></p>
+  </td>
+  <span style='mso-bookmark:hufftree'></span>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='mso-bookmark:hufftree'><b><span style='mso-fareast-font-family:"Times New Roman"'>binary<o:p></o:p></span></b></span></p>
+  </td>
+  <span style='mso-bookmark:hufftree'></span>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='mso-bookmark:hufftree'><span
+  style='mso-fareast-font-family:"Times New Roman"'>'g'<o:p></o:p></span></span></p>
+  </td>
+  <span style='mso-bookmark:hufftree'></span>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=right style='text-align:right'><span
+  style='mso-bookmark:hufftree'><span style='mso-fareast-font-family:"Times New Roman"'>00
+  <o:p></o:p></span></span></p>
+  </td>
+  <span style='mso-bookmark:hufftree'></span>
+ </tr>
+ <tr style='mso-yfti-irow:2'>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='mso-bookmark:hufftree'><span
+  style='mso-fareast-font-family:"Times New Roman"'>'o'<o:p></o:p></span></span></p>
+  </td>
+  <span style='mso-bookmark:hufftree'></span>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=right style='text-align:right'><span
+  style='mso-bookmark:hufftree'><span style='mso-fareast-font-family:"Times New Roman"'>01
+  <o:p></o:p></span></span></p>
+  </td>
+  <span style='mso-bookmark:hufftree'></span>
+ </tr>
+ <tr style='mso-yfti-irow:3'>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='mso-bookmark:hufftree'><span
+  style='mso-fareast-font-family:"Times New Roman"'>'p'<o:p></o:p></span></span></p>
+  </td>
+  <span style='mso-bookmark:hufftree'></span>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=right style='text-align:right'><span
+  style='mso-bookmark:hufftree'><span style='mso-fareast-font-family:"Times New Roman"'>1110
+  <o:p></o:p></span></span></p>
+  </td>
+  <span style='mso-bookmark:hufftree'></span>
+ </tr>
+ <tr style='mso-yfti-irow:4'>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='mso-bookmark:hufftree'><span
+  style='mso-fareast-font-family:"Times New Roman"'>'h'<o:p></o:p></span></span></p>
+  </td>
+  <span style='mso-bookmark:hufftree'></span>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=right style='text-align:right'><span
+  style='mso-bookmark:hufftree'><span style='mso-fareast-font-family:"Times New Roman"'>1101
+  <o:p></o:p></span></span></p>
+  </td>
+  <span style='mso-bookmark:hufftree'></span>
+ </tr>
+ <tr style='mso-yfti-irow:5'>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='mso-bookmark:hufftree'><span
+  style='mso-fareast-font-family:"Times New Roman"'>'e'<o:p></o:p></span></span></p>
+  </td>
+  <span style='mso-bookmark:hufftree'></span>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=right style='text-align:right'><span
+  style='mso-bookmark:hufftree'><span style='mso-fareast-font-family:"Times New Roman"'>101
+  <o:p></o:p></span></span></p>
+  </td>
+  <span style='mso-bookmark:hufftree'></span>
+ </tr>
+ <tr style='mso-yfti-irow:6'>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='mso-bookmark:hufftree'><span
+  style='mso-fareast-font-family:"Times New Roman"'>'r'<o:p></o:p></span></span></p>
+  </td>
+  <span style='mso-bookmark:hufftree'></span>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=right style='text-align:right'><span
+  style='mso-bookmark:hufftree'><span style='mso-fareast-font-family:"Times New Roman"'>1111
+  <o:p></o:p></span></span></p>
+  </td>
+  <span style='mso-bookmark:hufftree'></span>
+ </tr>
+ <tr style='mso-yfti-irow:7'>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='mso-bookmark:hufftree'><span
+  style='mso-fareast-font-family:"Times New Roman"'>'s'<o:p></o:p></span></span></p>
+  </td>
+  <span style='mso-bookmark:hufftree'></span>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=right style='text-align:right'><span
+  style='mso-bookmark:hufftree'><span style='mso-fareast-font-family:"Times New Roman"'>1100
+  <o:p></o:p></span></span></p>
+  </td>
+  <span style='mso-bookmark:hufftree'></span>
+ </tr>
+ <tr style='mso-yfti-irow:8;mso-yfti-lastrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='mso-bookmark:hufftree'><span
+  style='mso-fareast-font-family:"Times New Roman"'>'&nbsp;&nbsp;'<o:p></o:p></span></span></p>
+  </td>
+  <span style='mso-bookmark:hufftree'></span>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=right style='text-align:right'><span
+  style='mso-bookmark:hufftree'><span style='mso-fareast-font-family:"Times New Roman"'>100
+  <o:p></o:p></span></span></p>
+  </td>
+  <span style='mso-bookmark:hufftree'></span>
+ </tr>
+</table>
+
+</div>
+
+<p><span style='mso-bookmark:hufftree'>The string &quot;go go gophers&quot;
+would be encoded as shown (with spaces used for easier reading, the spaces
+wouldn't appear in the real encoding). </span></p>
+
+<p><span style='mso-bookmark:hufftree'>00 01 100 00 01 100 00 01 1110 1101 101
+1111 1100 </span></p>
+
+<p><span style='mso-bookmark:hufftree'>Once again, 37 bits are used to encode
+&quot;go go gophers&quot;. There are several trees that yield an optimal 37-bit
+encoding of &quot;go go gophers&quot;. The tree that actually results from a
+programmed implementation of Huffman's algorithm will be the same each time the
+program is run for the same weights (assuming no randomness is used in creating
+the tree). </span></p>
+
+<h3><span style='mso-bookmark:hufftree'><span style='mso-fareast-font-family:
+"Times New Roman"'>Why is Huffman Coding Greedy?<o:p></o:p></span></span></h3>
+
+<p><span style='mso-bookmark:hufftree'>Huffman's algorithm is an example of a <strong>greedy
+algorithm</strong>. It's called greedy because the two smallest nodes are
+chosen at each step, and this local decision results in a globally optimal
+encoding tree. In general, greedy algorithms use small-grained, or local
+minimal/maximal choices to result in a global minimum/maximum. Making change
+using U.S. money is another example of a greedy algorithm. </span></p>
+
+<p style='margin-left:.5in;text-indent:-.25in;mso-list:l2 level1 lfo2;
+tab-stops:list .5in'><span style='mso-bookmark:hufftree'><![if !supportLists]><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:Symbol;
+mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>Problem: give change in U.S. coins for any
+amount (say under $1.00) using the minimal number of coins. </span></p>
+
+<p style='margin-left:.5in;text-indent:-.25in;mso-list:l2 level1 lfo2;
+tab-stops:list .5in'><span style='mso-bookmark:hufftree'><![if !supportLists]><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:Symbol;
+mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>Solution (assuming coin denominations of $0.25,
+$0.10, $0.05, and $0.01, called quarters, dimes, nickels, and pennies,
+respectively): use the highest-value coin that you can, and give as many of
+these as you can. Repeat the process until the correct change is given.</span></p>
+
+<p style='margin-left:.5in;text-indent:-.25in;mso-list:l2 level1 lfo2;
+tab-stops:list .5in'><span style='mso-bookmark:hufftree'><![if !supportLists]><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:Symbol;
+mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>Example: make change for $0.91. Use 3 quarters
+(the highest coin we can use, and as many as we can use). This leaves $0.16. To
+make change use a dime (leaving $0.06), a nickel (leaving $0.01), and a penny.
+The total change for $0.91 is three quarters, a dime, a nickel, and a penny.
+This is a total of six coins, it is not possible to make change for $0.91 using
+fewer coins. </span></p>
+
+<p><span style='mso-bookmark:hufftree'>The solution/algorithm is greedy because
+the largest denomination coin is chosen to use at each step, and as many are
+used as possible. This locally optimal step leads to a globally optimal
+solution. Note that the algorithm <strong>does not work with different
+denominations</strong>. For example, if there are no nickels, the algorithm
+will make change for $0.31 using one quarter and six pennies, a total of seven
+coins. However, it's possible to use three dimes and one penny, a total of four
+coins. This shows that greedy algorithms are not always optimal algorithms. </span></p>
+
+<h2><span style='mso-bookmark:hufftree'><span style='mso-fareast-font-family:
+"Times New Roman"'>Implementing/Programming Huffman Coding<o:p></o:p></span></span></h2>
+
+<p><span style='mso-bookmark:hufftree'>In this section we'll see the basic
+programming steps in implementing huffman coding. More details can be found in
+the language specific descriptions. </span></p>
+
+<p><span style='mso-bookmark:hufftree'>There are two parts to an implementation:
+a compression program and an uncompression/decompression program. You need both
+to have a useful compression utility. We'll assume these are separate programs,
+but they share many classes, functions, modules, code or whatever
+unit-of-programming you're using. We'll call the program that reads a regular
+file and produces a compressed file the <em>compression</em> or <em>huffing</em>
+program. The program that does the reverse, producing a regular file from a
+compressed file, will be called the <em>uncompression</em> or <em>unhuffing</em>
+program. </span></p>
+
+<h3><span style='mso-bookmark:hufftree'><span style='mso-fareast-font-family:
+"Times New Roman"'>The Compression or Huffing Program<o:p></o:p></span></span></h3>
+
+<p><span style='mso-bookmark:hufftree'>To compress a file (sequence of
+characters) you need a </span><a href="#codetable"><span style='mso-bookmark:
+hufftree'>table of bit encodings</span><span style='mso-bookmark:hufftree'></span></a><span
+style='mso-bookmark:hufftree'>, e.g., an ASCII table, or a table giving a sequence
+of bits that's used to encode each character. This table is constructed from </span><a
+href="#hufftree"><span style='mso-bookmark:hufftree'>a coding tree</span><span
+style='mso-bookmark:hufftree'></span></a><span style='mso-bookmark:hufftree'>
+using root-to-leaf paths to generate the bit sequence that encodes each
+character. </span></p>
+
+<p><span style='mso-bookmark:hufftree'>Assuming you can write a specific number
+of bits at a time to a file, a compressed file is made using the following
+top-level steps. These steps will be developed further into sub-steps, and
+you'll eventually implement a program based on these ideas and sub-steps. </span></p>
+
+<p style='margin-left:.5in;text-indent:-.25in;mso-list:l4 level1 lfo3;
+tab-stops:list .5in'><span style='mso-bookmark:hufftree'><![if !supportLists]><span
+style='mso-fareast-font-family:"Times New Roman"'><span style='mso-list:Ignore'>1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]>Build
+a table of per-character encodings. The table may be given to you, e.g., an
+ASCII table, or you may build the table from a Huffman coding tree.</span></p>
+
+<p style='margin-left:.5in;text-indent:-.25in;mso-list:l4 level1 lfo3;
+tab-stops:list .5in'><span style='mso-bookmark:hufftree'><![if !supportLists]><span
+style='mso-fareast-font-family:"Times New Roman"'><span style='mso-list:Ignore'>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]>Read
+the file to be compressed (the plain file) and process one character at a time.
+To process each character find the bit sequence that encodes the character
+using the table built in the previous step and write this bit sequence to the
+compressed file. </span></p>
+
+<p><span style='mso-bookmark:hufftree'>As an example, we'll use the table below
+on the left, which is generated from the tree on the right. Ignore the weights
+on the nodes, we'll use those when we discuss how the tree is created. </span></p>
+
+<span style='mso-bookmark:hufftree'></span>
+
+<table class=MsoNormalTable border=0 cellpadding=0 style='mso-cellspacing:1.5pt;
+ mso-yfti-tbllook:1184;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td colspan=2 style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center'><strong><span
+  style='mso-fareast-font-family:"Times New Roman"'>Another Huffman Tree/Table
+  Example</span></strong><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes'>
+  <td width="40%" style='width:40.0%;padding:.75pt .75pt .75pt .75pt'>
+  <table class=MsoNormalTable border=0 cellpadding=0 style='mso-cellspacing:
+   1.5pt;mso-yfti-tbllook:1184;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+   <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal align=center style='text-align:center'><b><span
+    style='mso-fareast-font-family:"Times New Roman"'>char<o:p></o:p></span></b></p>
+    </td>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal align=center style='text-align:center'><b><span
+    style='mso-fareast-font-family:"Times New Roman"'>binary<o:p></o:p></span></b></p>
+    </td>
+   </tr>
+   <tr style='mso-yfti-irow:1'>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman"'>'a'<o:p></o:p></span></p>
+    </td>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal align=right style='text-align:right'><span
+    style='mso-fareast-font-family:"Times New Roman"'>100 <o:p></o:p></span></p>
+    </td>
+   </tr>
+   <tr style='mso-yfti-irow:2'>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman"'>'r'<o:p></o:p></span></p>
+    </td>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal align=right style='text-align:right'><span
+    style='mso-fareast-font-family:"Times New Roman"'>101 <o:p></o:p></span></p>
+    </td>
+   </tr>
+   <tr style='mso-yfti-irow:3'>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman"'>'e'<o:p></o:p></span></p>
+    </td>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal align=right style='text-align:right'><span
+    style='mso-fareast-font-family:"Times New Roman"'>11 <o:p></o:p></span></p>
+    </td>
+   </tr>
+   <tr style='mso-yfti-irow:4'>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman"'>'n'<o:p></o:p></span></p>
+    </td>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal align=right style='text-align:right'><span
+    style='mso-fareast-font-family:"Times New Roman"'>0001 <o:p></o:p></span></p>
+    </td>
+   </tr>
+   <tr style='mso-yfti-irow:5'>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman"'>'t'<o:p></o:p></span></p>
+    </td>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal align=right style='text-align:right'><span
+    style='mso-fareast-font-family:"Times New Roman"'>011 <o:p></o:p></span></p>
+    </td>
+   </tr>
+   <tr style='mso-yfti-irow:6'>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman"'>'s'<o:p></o:p></span></p>
+    </td>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal align=right style='text-align:right'><span
+    style='mso-fareast-font-family:"Times New Roman"'>010 <o:p></o:p></span></p>
+    </td>
+   </tr>
+   <tr style='mso-yfti-irow:7'>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman"'>'o'<o:p></o:p></span></p>
+    </td>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal align=right style='text-align:right'><span
+    style='mso-fareast-font-family:"Times New Roman"'>0000 <o:p></o:p></span></p>
+    </td>
+   </tr>
+   <tr style='mso-yfti-irow:8;mso-yfti-lastrow:yes'>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman"'>'&nbsp;&nbsp;'<o:p></o:p></span></p>
+    </td>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal align=right style='text-align:right'><span
+    style='mso-fareast-font-family:"Times New Roman"'>001 <o:p></o:p></span></p>
+    </td>
+   </tr>
+  </table>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=right style='text-align:right'><span
+  style='mso-fareast-font-family:"Times New Roman";mso-no-proof:yes'><img
+  border=0 width=412 height=295 id="_x0000_i1025"
+  src="2.7.%20Huffman%20Coding_files/startree.jpg" alt="*"></span><span
+  style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p>To compress the string/file &quot;streets are stone stars are not&quot;, we
+read one character at a time and write the sequence of bits that encodes each
+character. To encode &quot;streets are&quot; we would write the following bits:
+</p>
+
+<p>&nbsp;&nbsp; 010011101111101101000110010111 </p>
+
+<p>The bits would be written in the order <em>010</em>, <em>011</em>, <em>101</em>,
+<em>11</em>, <em>11</em>, <em>011</em>, <em>010</em>, <em>001</em>, <em>100</em>,
+<em>101</em>, <em>11</em>. </p>
+
+<p>That's the compression program. Two things are missing from the compressed
+file: (1) some information (called the header) must be written at the beginning
+of the compressed file that will allow it to be uncompressed; (2) some
+information must be written at the end of the file that will be used by the
+uncompression program to tell when the compressed bit sequence is over (this is
+the bit sequence for the <a href="#pseudo-eof">pseudo-eof</a> character
+described later). </p>
+
+<h3><span style='mso-fareast-font-family:"Times New Roman"'>Building the Table
+for Compression/Huffing<o:p></o:p></span></h3>
+
+<p>To build a table of optimal per-character bit sequences you'll need to build
+a Huffman coding tree using the greedy Huffman algorithm. The table is
+generated by following every root-to-leaf path and recording the left/right 0/1
+edges followed. These paths make the optimal encoding bit sequences for each
+character. </p>
+
+<p>There are three steps in creating the table: </p>
+
+<p style='margin-left:.5in;text-indent:-.25in;mso-list:l1 level1 lfo4;
+tab-stops:list .5in'><![if !supportLists]><span style='mso-fareast-font-family:
+"Times New Roman"'><span style='mso-list:Ignore'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>Count the number of times every character
+occurs. Use these counts to create an initial forest of one-node trees. Each
+node has a character and a weight equal to the number of times the character
+occurs. An <a href="#forest">example of one node trees</a> shows what the
+initial forest looks like.</p>
+
+<p style='margin-left:.5in;text-indent:-.25in;mso-list:l1 level1 lfo4;
+tab-stops:list .5in'><![if !supportLists]><span style='mso-fareast-font-family:
+"Times New Roman"'><span style='mso-list:Ignore'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>Use the greedy Huffman algorithm to build a
+single tree. The final tree will be used in the next step.</p>
+
+<p style='margin-left:.5in;text-indent:-.25in;mso-list:l1 level1 lfo4;
+tab-stops:list .5in'><![if !supportLists]><span style='mso-fareast-font-family:
+"Times New Roman"'><span style='mso-list:Ignore'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>Follow every root-to-leaf path creating a table
+of bit sequence encodings for every character/leaf.</p>
+
+<h3><a name=header><span style='mso-fareast-font-family:"Times New Roman"'>Header
+Information<o:p></o:p></span></a></h3>
+
+<span style='mso-bookmark:header'></span>
+
+<p>You must store some initial information in the compressed file that will be
+used by the uncompression/unhuffing program. Basically you must store the tree
+used to compress the original file. This tree is used by the uncompression
+program. </p>
+
+<p>There are several alternatives for storing the tree. Some are outlined here,
+you may explore others as part of the specifications of your assignment. </p>
+
+<p style='margin-left:.5in;text-indent:-.25in;mso-list:l0 level1 lfo5;
+tab-stops:list .5in'><![if !supportLists]><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;font-family:Symbol;mso-fareast-font-family:Symbol;
+mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>Store the character counts at the beginning of
+the file. You can store counts for every character, or counts for the non-zero
+characters. If you do the latter, you must include some method for indicating
+the character, e.g., store character/count pairs. </p>
+
+<p style='margin-left:.5in;text-indent:-.25in;mso-list:l0 level1 lfo5;
+tab-stops:list .5in'><![if !supportLists]><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;font-family:Symbol;mso-fareast-font-family:Symbol;
+mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>You could use a &quot;standard&quot; character
+frequency, e.g., for any English language text you could assume
+weights/frequencies for every character and use these in constructing the tree
+for both compression and uncompression. </p>
+
+<p style='margin-left:.5in;text-indent:-.25in;mso-list:l0 level1 lfo5;
+tab-stops:list .5in'><![if !supportLists]><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;font-family:Symbol;mso-fareast-font-family:Symbol;
+mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>You can store the tree at the beginning of the
+file. One method for doing this is to do a pre-order traversal, writing each
+node visited. You must differentiate leaf nodes from internal/non-leaf nodes.
+One way to do this is write a single bit for each node, say 1 for leaf and 0
+for non-leaf. For leaf nodes, you will also need to write the character stored.
+For non-leaf nodes there's no information that needs to be written, just the
+bit that indicates there's an internal node. </p>
+
+<h3><span style='mso-fareast-font-family:"Times New Roman"'>The pseudo-eof
+character<o:p></o:p></span></h3>
+
+<p class=MsoNormal><a name=pseudo-eof></a><span style='mso-fareast-font-family:
+"Times New Roman"'>When you write output the operating system typically buffers
+the output for efficiency. This means output is actually written to disk when
+some internal buffer is full, not every time you write to a stream in a
+program. Operating systems also typically require that disk files have sizes
+that are multiples of some architecture/operating system specific unit, e.g., a
+byte or word. On many systems all file sizes are multiples of 8 or 16 bits so
+that it isn't possible to have a 122 bit file. <o:p></o:p></span></p>
+
+<p>In particular, it is not possible to write just one single bit to a file,
+all output is actually done in &quot;chunks&quot;, e.g., it might be done in
+eight-bit chunks. In any case, when you write 3 bits, then 2 bits, then 10 bits,
+all the bits are eventually written, but you cannot be sure precisely when
+they're written during the execution of your program. Also, because of
+buffering, if all output is done in eight-bit chunks and your program writes
+exactly 61 bits explicitly, then 3 extra bits will be written so that the
+number of bits written is a multiple of eight. Your decompressing/unhuff
+program must have some mechanism to account for these extra or
+&quot;padding&quot; bits since these bits do not represent compressed information.
+</p>
+
+<p>Your decompression/unhuff program cannot simply read bits until there are no
+more left since your program might then read the extra padding bits written due
+to buffering. This means that when reading a compressed file, you <strong>CANNOT</strong>
+use code like this. </p>
+
+<pre><o:p>&nbsp;</o:p></pre><pre><span style='mso-spacerun:yes'>     </span><span style='mso-spacerun:yes'>   </span>int bits;</pre><pre><span style='mso-spacerun:yes'>        </span>while ((bits = input.readbits(1)) != -1)</pre><pre><span style='mso-spacerun:yes'>        </span>{</pre><pre><span style='mso-spacerun:yes'>            </span>// process bits</pre><pre><span style='mso-spacerun:yes'>        </span>}</pre>
+
+<p class=MsoNormal style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='mso-fareast-font-family:"Times New Roman"'><span
+style='mso-spacerun:yes'> </span>To avoid this problem, you can use a
+pseudo-EOF character and write a loop that stops when the pseudo-EOF character
+is read in (in compressed form). The code below illustrates how reading a
+compressed file works using a pseudo-EOF character: <o:p></o:p></span></p>
+
+<pre><o:p>&nbsp;</o:p></pre><pre><span style='mso-spacerun:yes'>       </span>int bits;</pre><pre><span style='mso-spacerun:yes'>       </span>while (true)</pre><pre><span style='mso-spacerun:yes'>       </span>{</pre><pre><span style='mso-spacerun:yes'>           </span>if ((bits = input.readbits(1)) == -1)</pre><pre><span style='mso-spacerun:yes'>           </span>{</pre><pre><span style='mso-spacerun:yes'>               </span>System.err.println(&quot;should not happen! trouble reading bits&quot;);</pre><pre><span style='mso-spacerun:yes'>           </span>}</pre><pre><span style='mso-spacerun:yes'>           </span>else</pre><pre><span style='mso-spacerun:yes'>           </span>{ </pre><pre><span style='mso-spacerun:yes'>               </span>// use the zero/one value of the bit read</pre><pre><span style='mso-spacerun:yes'>               </span>// to traverse Huffman coding tree</pre><pre><span style='mso-spacerun:yes'>               </span>// if a leaf is reached, decode the character and print UNLESS</pre><pre><span style='mso-spacerun:yes'>               </span>// the character is pseudo-EOF, then decompression done</pre><pre><o:p>&nbsp;</o:p></pre><pre><span style='mso-spacerun:yes'>               </span>if ( (bits &amp; 1) == 0) // read a 0, go left<span style='mso-spacerun:yes'>  </span>in tree</pre><pre><span style='mso-spacerun:yes'>               </span>else<span style='mso-spacerun:yes'>                  </span>// read a 1, go right in tree</pre><pre><o:p>&nbsp;</o:p></pre><pre><span style='mso-spacerun:yes'>               </span>if (at leaf-node in tree)</pre><pre><span style='mso-spacerun:yes'>       </span><span style='mso-spacerun:yes'>        </span>{</pre><pre><span style='mso-spacerun:yes'>                   </span>if (leaf-node stores pseudo-eof char) </pre><pre><span style='mso-spacerun:yes'>                       </span>break;<span style='mso-spacerun:yes'>   </span>// out of loop</pre><pre><span style='mso-spacerun:yes'>                   </span>else</pre><pre><span style='mso-spacerun:yes'>                       </span>write character stored in leaf-node</pre><pre><span style='mso-spacerun:yes'>               </span>}</pre><pre><span style='mso-spacerun:yes'>           </span>}</pre><pre><span style='mso-spacerun:yes'>       </span>}</pre>
+
+<p class=MsoNormal style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='mso-fareast-font-family:"Times New Roman"'><span
+style='mso-spacerun:yes'> </span>When a compressed file is written the last
+bits written should be the bits that correspond to the pseudo-EOF char. You
+will have to write these bits explicitly. These bits will be recognized by the
+program unhuff and used in the decompression process. This means that your
+decompression program will never actually run out of bits if it's processing a
+properly compressed file (you may need to think about this to really believe
+it). In other words, when decompressing you will read bits, traverse a tree,
+and eventually find a leaf-node representing some character. When the
+pseudo-EOF leaf is found, the program can terminate because all decompression
+is done. If reading a bit fails because there are no more bits (the bit reading
+function returns false) the compressed file is not well formed. <o:p></o:p></span></p>
+
+<p style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'>Every
+time a file is compressed the count of the the number of times the pseudo-EOF
+character occurs should be one --- this should be done explicitly in the code
+that determines frequency counts. In other words, a pseudo-char EOF with number
+of occurrences (count) of 1 must be explicitly created and used in creating the
+tree used for compression. </p>
+
+<p style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><o:p>&nbsp;</o:p></p>
+
+</div>
+
+</body>
+
+</html>

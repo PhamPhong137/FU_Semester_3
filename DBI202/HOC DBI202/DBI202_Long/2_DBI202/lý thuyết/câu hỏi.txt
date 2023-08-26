@@ -1,0 +1,4 @@
+1.Cho biết các tài khoản có số dư lớn hơn 200 được mở ở thành phố Waltham. Thông tin yêu câu Account_ID, Pending_balance, Branch_id
+2.Cơ sở nào có nhiều nhân viên đăng ký nhất. Thông tin yêu cầu ID cơ sở, tên cơ sở, số lượng nhân viên đăng ký
+3.Cho thấy thông tin của các khách hàng đã mở tài khoản trong năm 2004.  Thông tin yêu cầu ID tài khoản, họ và tên(trong 1 cột), ngày mở tài khoản và trạng thái hoạt động
+4. Cho thấy tên Product_cd, product_name, và số lượng của chúng

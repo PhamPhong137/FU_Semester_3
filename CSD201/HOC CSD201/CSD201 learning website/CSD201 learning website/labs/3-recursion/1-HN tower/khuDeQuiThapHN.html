@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Introduction to Data Structures &amp; Algorithms</title>
+</head>
+
+<body>
+<p><strong>Ứng dụng ngăn xếp để loại bỏ đệ qui của chương trình</strong></p>
+<p>Nếu một chương trình con đệ qui p(x)  được gọi từ chương trình chính ta nói chương trình con được thực hiện ở mức 1.  Chương trình con này gọi chính nó, ta nói nó đi sâu vào mức 2... cho đến một  mức k. Rõ ràng mức k phải thực hiện xong thì mức k-1 mới được thực hiện tiếp  tục, hay ta còn nói là chương trình con quay về mức k-1.</p>
+<p>Trong khi một chương trình con từ  mức i đi vào mức i+1 thì các biến cục bộ của mức i và địa chỉ của mã lệnh còn  dang dở phải được lưu trữ, địa chỉ này gọi là địa chỉ trở về. Khi từ mức i+1  quay về mức i các giá trị đó được sử dụng. Như vậy những biến cục bộ và địa chỉ  lưu sau được dùng trước. Tính chất này gợi ý cho ta dùng một ngăn xếp để lưu  giữ các giá trị cần thiết của mỗi lần gọi tới chương trình con. Mỗi khi lùi về  một mức thì các giá trị này được lấy ra để tiếp tục thực hiện mức này. Ta có  thể tóm tắt quá trình như sau:</p>
+<p>Bước 1: Lưu các biến cục bộ và địa chỉ trở về.</p>
+<p>Bước 2: Nếu thoả điều kiện ngừng đệ qui thì chuyển sang bước  3. Nếu không thì tính toán từng phần và quay lại bước 1 (đệ qui tiếp).</p>
+<p>Bước 3: Khôi phục lại các biến cục bộ và địa chỉ trở về.</p>
+<p>Ví dụ sau đây minh hoạ việc dùng ngăn xếp để loại bỏ chương  trình đệ qui của bài toán &quot;tháp Hà Nội&quot; (tower of Hanoi).</p>
+<p>Bài toán &quot;tháp Hà Nội&quot; được phát biểu như sau:</p>
+<p>Có ba cọc A,B,C. Khởi đầu cọc A có một số đĩa xếp theo thứ  tự nhỏ dần lên trên đỉnh. Bài toán đặt ra là phải chuyển toàn bộ chồng đĩa từ A  sang B. Mỗi lần thực hiện chuyển một đĩa từ một cọc sang một cọc khác và không  được đặt đĩa lớn nằm trên đĩa nhỏ.</p>
+<p><img src="khuDeQuiThapHN_clip_image002.jpg" alt="" width="317" height="163" /></p>
+<p>Chương trình con đệ qui để giải bài toán tháp Hà Nội như  sau:<br />
+  void thapHN(int n, char a, char b,char c)<br />
+  {if(n==1)<br />
+  System.out.println(&quot; &quot; + a +  &quot; -&gt; &quot; + b);<br />
+  else<br />
+  {thapHN(n-1,a,c,b);<br />
+  thapHN(1,a,b,c);<br />
+  thapHN(n-1,c,b,a);<br />
+  }<br />
+  }</p>
+<p>Quá trình thực hiện chương trình con được minh hoạ với ba  đĩa (n=3) như sau:</p>
+<p><img src="khuDeQuiThapHN_clip_image004.jpg" alt="" width="556" height="262" /><br />
+</p>
+<table border="1" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="259" valign="top"><br />
+      <strong>Kết quả chương trình đệ quy</strong></td>
+    <td width="276" valign="top"><p align="center"><strong>Kết quả chương trình không đệ quy</strong></p></td>
+  </tr>
+  <tr>
+    <td width="259" valign="top"><p><img src="khuDeQuiThapHN_clip_image006.jpg" alt="" width="215" height="128" /></p></td>
+    <td width="276" valign="top"><p><img src="khuDeQuiThapHN_clip_image008.jpg" alt="" width="215" height="126" /></p></td>
+  </tr>
+</table>
+<p>Để khử đệ qui ta phải nắm nguyên tắc sau đây:</p>
+<p>Mỗi khi chương trình con đệ qui  được gọi, ứng với việc đi từ mức i vào mức i+1, ta phải lưu trữ các biến cục bộ  của chương trình con ở bước i vào ngăn xếp. Ta cũng phải lưu &quot;địa chỉ mã  lệnh&quot; chưa được thi hành của chương trình con ở mức i. Tuy nhiên khi lập  trình bằng ngôn ngữ cấp cao thì đây không phải là địa chỉ ô nhớ chứa mã lệnh  của máy mà ta sẽ tổ chức sao cho khi mức i+1 hoàn thành thì lệnh tiếp theo sẽ  được thực hiện là lệnh đầu tiên chưa được thi hành trong mức i. </p>
+<p>Tập hợp các biến cục bộ của mỗi  lần gọi chương trình con xem như là một mẩu tin hoạt động (activation record).</p>
+<p>Mỗi lần thực hiện chương trình  con tại mức i thì phải xóa mẩu tin lưu các biến cục bộ ở mức này trong ngăn  xếp.</p>
+<p>Như vậy nếu ta tổ chức ngăn xếp  hợp lí thì các giá trị trong ngăn xếp chẳng những lưu trữ được các biến cục bộ  cho mỗi lần gọi đệ qui, mà còn &quot;điều khiển được thứ tự trở về&quot; của  các chương trình con. Ý tưởng này thể hiện trong cài đặt khử đệ qui cho bài  toán tháp Hà Nội là: mẩu tin lưu trữ các biến cục bộ của chương trình con thực  hiện sau thì được đưa vào ngăn xếp trước để nó được lấy ra dùng sau. </p>
+<p>//Kiểu cấu trúc lưu trữ biến cục bộ</p>
+<p>class Suite<br />
+  {int n;char a,b,c;<br />
+  Suite(int n1, char a1, char b1, char c1)<br />
+  {n=n1;a=a1;b=b1;c=c1;<br />
+  }<br />
+  }</p>
+<p>// Chương trình tháp Hà nội  không đệ qui</p>
+<p>   void thapHN(Suite x)<br />
+  {Suite g,h;<br />
+  int  n; char a,b,c;<br />
+  MyStack  t = new MyStack();<br />
+  t.push(x);<br />
+  while(!t.isEmpty())<br />
+  {g=t.pop();  //Lay phan tu o dinh stack<br />
+  ...<br />
+  }<br />
+  }</p>
+<p>Minh họa cho lời gọi thapHN(x)  với 3 đĩa, tức là x.n=3. </p>
+<p>Ngăn xếp khởi đầu:<br />
+  <img src="khuDeQuiThapHN_clip_image010.jpg" alt="" width="112" height="45" /></p>
+<p>Ngăn xếp sau lần lặp thứ nhất:<br />
+  <img src="khuDeQuiThapHN_clip_image012.jpg" alt="" width="111" height="83" /></p>
+<p>Ngăn xếp sau lần lặp thứ hai<br />
+  <img src="khuDeQuiThapHN_clip_image014.jpg" alt="" width="111" height="120" /></p>
+<p>Các lần lặp 3,4,5,6 thì chương trình con xử lý trường hợp  chuyển 1 đĩa (ứng với trường hợp không gọi đệ qui), vì vậy không có mẩu tin nào  được thêm vào ngăn xếp. Mỗi lần xử lý, phần tử đầu ngăn xếp bị xoá. Ta sẽ có  ngăn xếp như sau.<br />
+  <img src="khuDeQuiThapHN_clip_image016.jpg" alt="" width="110" height="43" /></p>
+<p>Tiếp tục lặp bước 7  ta  có ngăn xếp như sau:<br />
+  <img src="khuDeQuiThapHN_clip_image018.jpg" alt="" width="111" height="83" /></p>
+<p>Các lần lặp tiếp tục chỉ xử lý việc chuyển 1 đĩa (ứng với  trường hợp không gọi đệ qui). Chương trình con in ra các phép chuyển và dẫn đến  ngăn xếp rỗng.</p>
+<p>&nbsp;</p>
+</body>
+</html>

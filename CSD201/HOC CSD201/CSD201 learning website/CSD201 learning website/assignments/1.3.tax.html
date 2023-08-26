@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>DSA - Assignment 1</title>
+</head>
+
+<body>
+<p><a href="..\as.htm">Return to Assignments</a>
+<h2 align="center"><strong>DSA - Assignment 1</strong></h2>
+<H1 align="center">Income Tax calculator</H1>
+<H2 align="center">using linked  list data structure</H2>
+
+  As your first  assignment this semester, you are to write a Java program that calculates the  income tax .&nbsp; </p>
+<p>Learning Outcome<br />
+  Upon successful completion of this assignment, you will  have demonstrated the ability to apply linked list to a practical problem. </p>
+<p>Introduction<br />
+  From 2009, people in the Strange country must pay income tax depended on  the total amount he/she earns. Income tax is the kind of progress tax, which  applies higher tax rates to individuals posting higher earnings.<br />
+  Firstly, taxable income is identified. Taxable  income is calculated by deducting deduction from income.<br />
+  Then, taxable income is multiplied by the tax rate of according  brackets you belong in. <br />
+  Here, three  tax brackets: </p>
+<ol start="1" type="1">
+  <li>taxable income of <strong>5000 USD or less</strong> attracts tax at </li>
+</ol>
+<p>      <strong>5% </strong></p>
+<ol start="2" type="1">
+  <li>taxable income of <strong>more than 5000 USD and not more than       10000 USD</strong> attracts tax at <strong>10%</strong>.</li>
+  <li>taxable income of <strong>more than 10000 USD</strong> attracts tax       at </li>
+</ol>
+<p>      <strong>15%</strong>.  </p>
+<p>Specifications<br />
+  You should use linked list to  store data for taxpayers in a company. You should create a linked list from  scratch, do not use list structures available in java Data like ArrayList,  Vector or LinkedList classes. The items for a taxpayer are: </p>
+<ol start="1" type="1">
+  <li>The code of the taxpayer (this       should be unique for the taxpayer).</li>
+  <li>The name of the taxpayer.</li>
+  <li>The income earned by the taxpayer (should       be positive).</li>
+  <li>The deduction amount (should be       non-negative and less than income).</li>
+  <li>The tax  to pay (calculated from income and       deduction). </li>
+</ol>
+<p>Thus your application should contain the class like:<br />
+  class TaxPayer<br />
+  {String code,name;<br />
+  double income,deduct,tax;<br />
+  ...<br />
+  }<br />
+  On running, your program displays the menu as below:</p>
+<p>            <img src="images\1.3.tax_clip_image002.jpg" alt="" width="288" height="222" /><br />
+  <br />
+  Submission Requirements<br />
+  <a name="OLE_LINK2" id="OLE_LINK2"></a><a name="OLE_LINK1" id="OLE_LINK1">Create  the directory with a name like <strong>&lt;class&gt;-&lt;name&gt;&lt;roll  number&gt;-ASS1</strong>, e.g.</a><br />
+  <strong>            SE0412-QuangTV00456-ASS</strong><strong>1                     (1)</strong><br />
+  The (1)  directory contains the following files:</p>
+<ol start="1" type="1">
+  <li>The run.bat        file to run your program.</li>
+  <li>Your source code files.</li>
+  <li>Your input test files.</li>
+</ol>
+<p>The statements in run.bat file may be:<br />
+  cls<br />
+  javac Main.java<br />
+  java Main<br />
+  pause<br />
+  del *.class</p>
+<p>Compress the folder   (1) <strong> </strong>to .zip (or .rar) file (with the same  name) and upload to cms.</p>
+<p>Assignment assessment<br />
+  You will be asked to modify immediately and to explain your assignment in  lab room to be sure that you are really the author  of the assignment you submitted.</p>
+<p>Note: At the beginning of your program, include  comments reflecting accurate information for you in the format as below: </p>
+<pre>/*</pre>
+<pre> Assignment 1  - Income tax</pre>
+<pre> Class ID          : DSABiss3</pre>
+<pre> Student ID        : 0023</pre>
+<pre> Student Name      : Nguyễn Minh Đức</pre>
+<pre> Due Date          : 22 November 2009</pre>
+<pre> I declare that this assignment is my own work</pre>
+<pre> in accordance with FPT Policy.</pre>
+<pre>*/</pre>
+<pre>&nbsp;</pre>
+</body>
+</html>

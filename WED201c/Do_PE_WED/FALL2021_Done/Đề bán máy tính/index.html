@@ -1,0 +1,215 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>MinhHoangLaptop</title>
+	<link href="https://fonts.googleapis.com/css?family=Playfair+Display&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="style.css">
+	<style>
+		.checked {
+			color: orange;
+		}
+
+		.sidenav {
+			height: 100%;
+			width: 0;
+			position: fixed;
+			z-index: 1;
+			top: 0;
+			left: 0;
+			background-color: #07A0C7;
+			overflow-x: hidden;
+			transition: 0.5s;
+			padding-top: 60px;
+			webkit-box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.75);
+			-moz-box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.75);
+			box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.75);
+		}
+
+		.sidenav a {
+			padding: 8px 8px 8px 32px;
+			text-decoration: none;
+			font-size: 25px;
+			color: #818181;
+			display: block;
+			transition: 0.3s;
+			color: #FCF41B;
+		}
+
+		.sidenav a:hover {
+			color: #FFFFFF;
+			font-weight: bold;
+		}
+
+		.sidenav .closebtn {
+			position: absolute;
+			top: 0;
+			right: 25px;
+			font-size: 36px;
+			margin-left: 50px;
+		}
+
+		@media screen and (max-height: 450px) {
+			.sidenav {
+				padding-top: 15px;
+			}
+
+			.sidenav a {
+				font-size: 18px;
+			}
+		}
+	</style>
+
+	<link rel="stylesheet" href="styleindex.css">
+
+
+</head>
+
+<body>
+
+	<div class="header">
+
+		<div class="menu">
+
+			<div id="mySidenav" class="sidenav">
+				<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+				<a href="#">Home</a>
+				<a href="#">About</a>
+				<a href="#">Laptop</a>
+				<a href="#">PC</a>
+				<a href="#">Accessories</a>
+				<a href="#">Contact</a>
+			</div>
+			<span style="font-size:30px;cursor:pointer;" onclick="openNav()">&#9776; Menu</span>
+		</div>
+
+		<div class="logo">
+			<a href="index.html"><img width="90px" src="images/logochanel.png"></a>
+		</div>
+
+
+		<div>
+			<form>
+				<input type="text" placeholder="Search in website">
+				<button type="submit" class="header-button-search">Search</button>
+			</form>
+
+		</div>
+
+	</div>
+
+
+
+	<div class="banner">
+
+		<img  src="images/Banner01.jpg" alt="Chanel" />
+
+	</div>
+
+	<div>
+
+		<h1 class="center" style="color: red;">Best Sellers</h1>
+
+		<div class="content-top">
+			<div class="img-content">
+
+				<img src="images/Dell01.jpg" alt="Laptop Dell Core i7" />
+
+			</div>
+
+			<div class="main-content-top">
+				<h2 style="color: blue;">Detail information</h2>
+
+				<p>Display : 14.0-inch FHD (1920 x 1080) IPS LED-Backlit Touch Display</p>
+				<p>Video Card : NVIDIA® GeForce® MX130 with 2GB GDDR5 graphics memory</p>
+				<p>Processor(CPU) : Intel® Core™ i7-8565U Processor (8MB Cache, up to 4.6 GHz)</p>
+				<p>Hard Drive: 256GB m.2 PCIe Solid State Drive </p>
+				<p>Ports: 1 x HDMI 1.4b, 1 x Wedge-shaped lock slot, 1 x USB 3.1 Gen 1 Type C™ (DP/PowerDelivery)</p>
+				<p>Memory: 16GB DDR4 2666MHz (16GBx1)</p>
+				<p>Operating System: Windows 10 Home 64-bit</p>
+
+			</div>
+		</div>
+		<div style="clear: both;"></div>
+	</div>
+
+	<div>
+
+		<h1 class="center" style="color: red;">Accessories</h1>
+
+		<div class="content-bot">
+
+			<div class="item-left">
+
+				<img src="images/Chanel_N5.jpg" />
+
+				<div class="main-content">
+					<h3>BG4_512GB</h3>
+					<p>BG4 stands for the fourth generation of the brand's newest product line. This is a simple and
+						small
+						M.2
+						2230 SSD that makes it usable on mobile computers, 2-in-1 notebook PCs, or any small computer.
+						other
+						compact. However, they still have a full range of storage capacities from 128GB, 256GB, 512GB
+						and
+						1TB.
+					</p>
+
+					<p>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star"></span>
+
+					</p>
+					<p>Price : 120$ </p>
+				</div>
+
+			</div>
+
+
+			<div class="item-right">
+
+				<img src="images/Chanel_N5_02.jpg" />
+
+				<div class="main-content">
+					<h3>Logitech Bluetooth Wireless Mouse V470</h3>
+					<p>The outstanding feature of the V470 laptop mouse line is that it is equipped with Bluetooth 1.2
+						technology and the ability to calibrate laser beams. Along with the new scrolling function,
+						users
+						can
+						easily perform zoom in, zoom out or scroll vertically and horizontally.</p>
+					<p>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star checked"></span>
+
+					</p>
+					<p>Price : 103$ </p>
+				</div>
+			</div>
+
+		</div>
+
+		<div style="clear: both; margin-bottom: 10px;"></div>
+
+	</div>
+
+	<div class="footer">
+
+		<p>Email : Minhhoanglaptop@gmail.com</p>
+		<p>Address: 100 Dien Bien Phu,District 3, HCMC</p>
+		<h5>&copy; Copyright 2021. MinhHoanglaptop.com</h5>
+
+	</div>
+
+
+</body>
+
+
+</html>

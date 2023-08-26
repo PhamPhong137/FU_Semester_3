@@ -1,0 +1,40 @@
+.food{
+    background-color: rgb(123, 218, 242);
+}
+.food-header{
+    border-bottom: 4px solid rgb(83, 110, 208)  ;
+}
+.food-item{
+    display: flex;
+    margin: 20px;   
+}
+.food-item-img{
+    width: 30%;
+    margin-right: 20px;
+}
+.food-item-img img{
+    height: 130px;
+    border-radius: 100%;
+}
+.food-header{
+    color: orange;
+}
+.food-content p{
+    font-size: 20px;
+}
+.res{
+    padding: 10px;
+}
+.res p{
+    font-size: 30px;
+}
+.buffet{
+    padding: 0 70px;
+}
+.footer{
+    background-color: rgb(23, 113, 104);
+    text-align: center;
+    padding: 10px;
+    color: white;
+    margin-top: 10px;
+}

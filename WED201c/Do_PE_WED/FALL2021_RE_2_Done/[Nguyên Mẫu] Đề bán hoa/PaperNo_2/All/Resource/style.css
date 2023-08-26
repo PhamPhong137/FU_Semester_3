@@ -1,0 +1,66 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 70px;
+}
+.header p {
+  color: green;
+  font-size: 30px;
+}
+.logo {
+  border: 1px solid black;
+  border-radius: 50px;
+}
+.logo img {
+  border-radius: 50px;
+}
+.list {
+  display: flex;
+  list-style: none;
+  background-color: green;
+  padding: 10px;
+  color: white;
+  padding-left: 100px;
+  justify-content: center;
+}
+.list li {
+  padding-left: 45px;
+}
+.desc {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.desc-img {
+  grid-column: 1/2;
+}
+.desc-text {
+  grid-column: 2/4;
+  padding: 0px 10px;
+}
+.flowers {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  /* column-gap: 10px; */
+  padding: 10px;
+}
+.flowers-items {
+  border: 1px solid black;
+  text-align: center;
+  box-shadow: 5px 5px 5px 1px #5b5858;
+  margin: 10px;
+  border-radius: 3px;
+  padding: 20px;
+}
+.flowers-items button {
+  padding: 16px 20px;
+  background-color: orange;
+  border-radius: 20px;
+  border: 0;
+}
+.footer{
+    background-color: green;
+    text-align: center;
+    color: white;
+    padding: 10px;
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Introduction to Data Structures &amp; Algorithms</title>
+</head>
+
+<body>
+<h1><a name="_Toc180383999" id="_Toc180383999">Permutations</a></h1>
+<ul>
+  <li>A permutation of a set of objects is a  particular ordering of those objects</li>
+  <li>When we speak of &ldquo;all permutations&rdquo; of a set, we  mean all possible ways of ordering those objects</li>
+  <li>Examples:</li>
+  <ul>
+    <li>Given the empty set { }, the only possible  permutation is { }</li>
+    <li>Given the set {A}, the only possible permutation  is {A}</li>
+    <li>Given the set {A, B}, the possible permutations  are {AB, BA}</li>
+    <li>Given the set {A, B, C}, the possible  permutations are<br />
+      {ABC, ACB, BAC, BCA, CAB, CBA}</li>
+    <li>Etc.</li>
+  </ul>
+  <li>To find all permutations of n objects:</li>
+  <ul>
+    <li>Find all permutations of n-1 of those objects</li>
+    <li>Insert the remaining object into all possible  positions of each permutation of n-1 objects</li>
+  </ul>
+  <li>Example: To find all permutations of 3 objects  {A, B, C}</li>
+  <ul>
+    <li>Find all permutations of 2 of the objects, say B  and C:<br />
+      B        C             and              C        B</li>
+    <li>Insert the remaining object, A, into all  possible positions (marked by <strong>^</strong>) in each of the permutations of B and C:<br />
+      <strong>^        </strong>B  <strong>^       </strong>C  <strong>^</strong>        and       <strong>^        </strong>C  <strong>^       </strong>B  <strong>^</strong></li>
+    <li>   ABC    BAC  BCA                 ACB   CAB   CBA</li>
+  </ul>
+</ul>
+<p>&nbsp;</p>
+<p><strong>Code to be completed:</strong></p>
+<table border="1" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="657" valign="top"><br />
+      import    java.util.*;<br />
+      public    class Main<br />
+      {static ArrayList&lt;String&gt;    permute(String s)<br />
+      {ArrayList&lt;String&gt; t = new    ArrayList&lt;String&gt;();<br />
+      return(t);<br />
+      }<br />
+      public static void main(String [] args)<br />
+      {int n,i,i1;<br />
+      String s = &quot;ABCD&quot;;<br />
+      ArrayList&lt;String&gt; t = permute(s);<br />
+      for(i=0;i&lt;t.size();i++)<br />
+      {i1=i+1;<br />
+      if(i1&lt;10)<br />
+      System.out.println(&quot;   &quot; + i1 + &quot; &quot; + t.get(i));<br />
+      else if(i1&lt;100)<br />
+      System.out.println(&quot;  &quot; + i1 + &quot; &quot; + t.get(i));<br />
+      else<br />
+      System.out.println(&quot;    &quot; + i1 + &quot; &quot; + t.get(i));<br />
+      }<br />
+      System.out.println();<br />
+      }<br />
+      } </td>
+  </tr>
+</table>
+<p><strong>Required output:</strong><br />
+  <img src="permutation_clip_image002.jpg" alt="" width="155" height="648" /></p>
+<p>&nbsp;</p>
+</body>
+</html>

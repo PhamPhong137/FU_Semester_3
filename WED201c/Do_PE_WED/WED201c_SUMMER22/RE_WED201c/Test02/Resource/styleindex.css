@@ -1,0 +1,65 @@
+.header {
+  display: flex;
+  align-items: center;
+}
+.header-img {
+  width: 20%;
+}
+.header-img img{
+    padding-left: 20px
+}
+.header-menu {
+  width: 60%;
+}
+.header-menu ul {
+  display: flex;
+  list-style: none;
+}
+.header-menu li{
+    margin: 0px 10px;
+}
+.header-menu li a {
+  text-decoration: none;
+}
+
+.header-search {
+  width: 20%;
+}
+.banner {
+    display: flex;
+}
+.order-tour{
+    display: flex;
+    justify-content: center;
+}
+.hotel{
+    display: flex;
+}
+.order-left{
+    width: 50%;
+    border: 1px solid black;
+    padding: 50px;
+    margin-right: 20px;
+   
+}
+.order-right{
+    width: 50%;
+    border: 1px solid black;
+    padding: 50px;
+    margin-left: 20px;
+    
+}
+.summer{
+    display: flex;
+    justify-content: center;
+}
+.left{
+    display: flex;
+}
+.right{
+    display: flex;
+}
+
+
+
+

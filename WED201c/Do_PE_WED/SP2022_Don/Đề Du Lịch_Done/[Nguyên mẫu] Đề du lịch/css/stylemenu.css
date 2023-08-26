@@ -1,0 +1,47 @@
+@charset "utf-8";
+/* CSS Document */
+
+.navbar-nav,.form-group{
+	height: 80px;
+	padding-top: 20px;
+}
+
+.form-control{
+	margin-top: 3px;
+}
+
+
+.navbar-brand img{
+	width: 60px;
+	height: 60px;
+	border-radius: 30%;
+	
+}
+
+.navbar-nav a{
+	color: rgba(8,159,152,1.00) !important;
+	font-size: 18px;
+}
+
+.nav{
+	margin-left: 100px;
+}
+
+@media screen and (max-width: 767px) {
+  .nav{
+	margin-left: 0px !important;
+	}
+	
+	.navbar-nav{
+		height: auto;
+	}
+	
+	.navbar-toggle{
+		background-color: #098B0B;
+	}
+	
+	.icon-bar{
+		border: #FFFFFF 1px solid;
+	}
+	
+}

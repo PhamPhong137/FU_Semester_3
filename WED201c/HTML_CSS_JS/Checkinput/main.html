@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <h1>Information</h1>
+        <table>
+            <tr>
+                <td>Name</td>
+                <td><input type="text" name="" id="name"></td>
+            </tr>
+            <tr>
+                <td>Age</td>
+                <td><input type="text" name="" id="age"></td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td><input type="text" name="" id="address"></td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td>
+                    <input type="radio" name="gender" value="Male"  id="m">
+                    <label for="m">Male</label>
+                    <input type="radio" name="gender" value="Female" id="f">
+                    <label for="f">Female</label>
+                </td>
+            </tr>
+            <tr>
+                <td>Favorite</td>
+                <td>
+                    <input type="checkbox" value="Java">Java
+                    <input type="checkbox" value="JS">JavaScript
+                    <input type="checkbox" value="PY">Python
+                </td>
+            </tr>
+            <tr>
+                <td><input onclick="send()" type="button" value="Submit"></td>
+                <td><input onclick="reset()" type="button" value="Reset"></td>
+
+            </tr>
+        </table>
+    </form>
+    <script src="mycode.js"></script>
+</body>
+
+</html>

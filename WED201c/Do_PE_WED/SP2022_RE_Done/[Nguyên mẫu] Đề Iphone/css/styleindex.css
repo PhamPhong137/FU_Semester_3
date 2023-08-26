@@ -1,0 +1,105 @@
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+}
+.nav {
+  display: flex;
+  list-style-type: none;
+  width: 40%;
+  margin-left: 250px;
+  justify-content: center;
+  padding-left: 80px;
+}
+.nav a {
+  text-decoration: none;
+  list-style: none;
+  font-size: 20px;
+  color: black;
+  font-weight: bold;
+  padding: 25px;
+}
+
+.header-img {
+  width: 20%;
+  padding: 20px;
+}
+.header-img img {
+  width: 20%;
+}
+.header-search {
+  width: 40%;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 40px;
+}
+.header-search button {
+  background-color: black;
+  color: white;
+}
+.banner {
+  margin: 0px;
+}
+.main {
+  display: flex;
+}
+.phone-info {
+  display: flex;
+  border: 1px solid black;
+  margin: 30px;
+  box-shadow: 5px 5px 5px 1px grey;
+  border-radius: 5px;
+}
+.phone-info img {
+  padding: 10px;
+  height: 500px;
+}
+.phone-info p {
+  font-size: 18px;
+  text-align: justify;
+  padding-right: 10px;
+  line-height: 24px;
+}
+.list {
+  background-color: grey;
+}
+.sale {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  column-gap: 20px;
+  padding: 0px 50px;
+  margin-bottom: 50px;
+}
+.sale-items {
+  text-align: center;
+  box-shadow: 5px 5px 5px 1px gray;
+  border-radius: 10px;
+  padding-bottom: 36px;
+}
+.sale-items img {
+  border-radius: 10px;
+}
+
+.sale-items p:nth-child(3) {
+  color: red;
+}
+.sale-items p:nth-child(3) del {
+  color: gray;
+}
+
+.footer {
+  background-color: rgb(36, 35, 35);
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+.text{
+    line-height: 25px;
+}
+.text li{
+  list-style: circle;
+}

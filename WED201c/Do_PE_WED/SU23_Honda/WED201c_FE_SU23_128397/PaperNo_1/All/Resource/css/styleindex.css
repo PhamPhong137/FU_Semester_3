@@ -1,0 +1,89 @@
+.header-logo img {
+  height: 70px;
+}
+.header-search {
+  margin-top: 20px;
+}
+
+.header-feedback {
+  text-align: center;
+}
+.menu {
+  margin-top: 4px;
+  padding: 0px;
+}
+.lemenu1 {
+  background-color: rgb(46, 196, 186);
+}
+.nav1 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.desc-text h1 {
+  text-align: center;
+  color: rgb(46, 196, 186);
+  margin: 30px
+}
+.desc-text p{
+    font-size: 20px;
+}
+.seller-title h1{
+    text-align: center;
+    color: rgb(46, 196, 186);
+    margin: 20px;
+}
+.seller-text h3{
+    color: orange;
+}
+.seller-text p{
+    font-size: 22px;
+    text-align: justify;
+}
+.seller{
+    padding: 0px 70px;
+}
+.accessories{
+    padding: 0px 70px;
+}
+.accessories-title{
+    text-align: center;
+    color: rgb(46, 196, 186);
+    margin: 20px;
+}
+.accessories-desc h3{
+    text-align: center;
+    font-size:30px;
+    color: orange;
+}
+.accessories-desc p{
+    font-size: 20px;
+    text-align: justify;
+}
+.accessories-desc h4{
+    color: red;
+}
+.footer{
+    margin-top: 10px;
+    background-color: rgb(46, 196, 186);
+    text-align: center;
+    color: white;
+    padding: 15px;
+}
+@media  screen and (max-width:900px) {
+    .header-logo{
+        text-align: center;
+    }
+    .xeto img{
+        width: 100%;
+    }
+    .xenho1 {
+        text-align: center;
+    }
+    .xenho2{
+        text-align: center;
+    }
+}
+
+
+

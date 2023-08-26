@@ -1,0 +1,74 @@
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.list ul {
+  display: flex;
+}
+.list ul li {
+  list-style: none;
+  padding: 15px;
+}
+.list ul li a {
+  text-decoration: none;
+  font-size: 20px;
+}
+.phone {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.phone h1 {
+  text-align: center;
+  color: red;
+  font-size: 40px;
+  grid-column: 1/4;
+}
+.phone div {
+  border: 1px solid grey;
+  box-shadow: 5px 5px 5px 1px gray;
+  margin: 0px 50px;
+}
+.phone-img {
+  text-align: center;
+  padding-bottom: 25px;
+}
+.phone-info {
+  padding: 10px;
+}
+.phone-info p {
+  padding: 10px 0px;
+  border-bottom: 1px dashed black;
+}
+.container-items {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin: 0px 50px;
+}
+.item {
+  margin: 20px;
+  border: 1px solid black;
+}
+.item div {
+  background-color: rgb(255, 115, 0);
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+.footer {
+  background-color: aqua;
+}
+.footer-content {
+  display: flex;
+  justify-content: space-evenly;
+}
+.footer-content div {
+  padding: 10px;
+}
+

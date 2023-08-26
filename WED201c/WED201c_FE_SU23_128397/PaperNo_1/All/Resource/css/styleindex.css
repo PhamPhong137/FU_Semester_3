@@ -1,0 +1,69 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.header-search {
+  width: 450px;
+  padding-left: 40px;
+}
+.menu {
+  padding-left: 35%;
+  
+}
+.header-navbar {
+  margin-top: 5px;
+}
+.desc-title h1 {
+  text-align: center;
+  color: aqua;
+  padding: 10px;
+}
+.desc-title p {
+  padding: 0px 10px;
+  font-size: 20px;
+  text-align: justify;
+}
+.bestseller-title {
+  text-align: center;
+  color: aqua;
+  padding: 10px;
+}
+.seller-desc h3 {
+  color: orange;
+}
+.seller-desc p {
+  font-size: 23px;
+  text-align: justify;
+}
+.seller-img {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+.accessories-title {
+  text-align: center;
+  color: aqua;
+  padding: 20px;
+}
+.accessories-desc h3 {
+  color: orange;
+  text-align: center;
+  font-size: 30px;
+}
+.accessories-desc p {
+  font-size: 20px;
+  text-align: justify;
+}
+.accessories-desc h4 {
+  color: red;
+  font-size: 30px;
+}
+.main-footer{
+  background-color: rgb(19, 234, 234);
+}
+.footer {
+  text-align: center;
+  padding: 20px;
+  color: white;
+  
+}

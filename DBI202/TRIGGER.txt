@@ -1,0 +1,65 @@
+-- create trigger which 2 values to check
+CREATE TRIGGER Tr2 ON Copies
+INSTEAD OF DELETE
+AS 
+BEGIN
+    UPDATE Copies
+    SET No_Of_Copies = NULL
+    WHERE Copies.BookID IN (
+        SELECT deleted.BookID
+        FROM deleted
+    )
+    OR Copies.BranchID IN (
+        SELECT deleted.BranchID
+        FROM deleted
+    )
+END
+--create trigger with if else
+create trigger tr_no_insert on Employee
+instead of insert
+as
+begin
+	if Exists
+	 (
+	 select *
+	 from inserted i
+	 where i.Dno in (
+		select d.Dnumber
+		from EMPLOYEE e
+		inner join DEPARTMENT d on e.Dno = d.Dnumber
+		group by d.Dnumber
+		having count(e.Dno) > 5
+	 )
+	)
+	select 'not insert' as result
+	else
+	select 'inserted' as result
+
+end
+-- create trigger update 
+CREATE TRIGGER Tr2 ON Departments
+AFTER UPDATE
+AS
+BEGIN  
+IF UPDATE(ManagerID)
+		BEGIN
+        SELECT de.DepartmentID, de.DepartmentName, de.ManagerID AS OldManagerID, i.ManagerID AS NewManagerID
+        FROM inserted i
+        INNER JOIN deleted de ON i.DepartmentID = de.DepartmentID  
+		END 
+END;
+--
+select s.name,s.department, avg(m.mark) as avgMark
+  from Students s join enroll e on s.id=e.studentId
+  join marks m on m.enrollId=e.enrollId
+  join Departments d on d.Code=s.department
+  group by  s.name,s.department
+  having avg(m.mark) in(
+	  select max(avgMark) as maxMark
+	  from (select s.name,s.department, avg(m.mark) as avgMark
+			from Students s join enroll e on s.id=e.studentId
+			 join marks m on m.enrollId=e.enrollId
+			 join Departments d on d.Code=s.department
+		  group by s.name,s.department) as tb1
+	  group by department
+	)

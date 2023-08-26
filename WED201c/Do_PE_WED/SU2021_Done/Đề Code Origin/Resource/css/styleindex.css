@@ -1,0 +1,58 @@
+.banner {
+  padding: 0px;
+}
+.col-md-3 {
+  padding-left: 10px;
+}
+.service-content {
+  position: relative;
+  margin-bottom: 5px;
+}
+.service-text {
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  color: white;
+  background-color: rgba(8, 8, 8, 0.2);
+}
+.service-text h3 {
+  padding-left: 5px;
+  font-size: 20px;
+}
+.combo-text {
+  margin-top: 27px;
+}
+
+.combo-title {
+  background-color: rgb(170, 168, 168);
+  padding: 10px;
+}
+.combo-title p:first-child {
+  border-bottom: 2px dashed gray;
+}
+.combo-title p:last-child {
+  margin-bottom: -8px;
+}
+.sale {
+  background-color: rgb(147, 143, 143);
+}
+.sale-text {
+  padding: 10px;
+}
+.sale-text p {
+  color: gray;
+  font-size: 20px;
+}
+.sale-content {
+  padding: 10px;
+}
+.sale-content p:first-child {
+  border-bottom: 2px dashed gray;
+}
+.container-fluid {
+  background-color: black;
+  color: white;
+  margin-top: 10px;
+  padding: 10px;
+}
+

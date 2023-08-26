@@ -1,0 +1,7 @@
+
+A B C E D G
+E D F G
+C E D F
+A   B   C   E   D   G
+0   10   12   15   19   29
+

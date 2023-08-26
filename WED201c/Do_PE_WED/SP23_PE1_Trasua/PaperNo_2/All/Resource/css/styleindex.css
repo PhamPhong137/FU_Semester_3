@@ -1,0 +1,101 @@
+.header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+.header img {
+  border: 1px solid gray;
+  border-radius: 50%;
+  
+}
+.header div p {
+  color: green;
+  font-size: 40px;
+  font-style: italic;
+  font-family: "Ephesis";
+ 
+}
+
+.content-menu ul {
+  display: flex;
+  list-style: none;
+  background-color: green;
+  padding: 10px;
+  justify-content: center;
+}
+.content-menu ul a {
+  text-decoration: none;
+  font-size: 30px;
+  margin: 5px 40px;
+  color: white;
+}
+.content-banner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.detail {
+  display: flex;
+  margin-top: 10px;
+}
+.detail-content {
+  padding: 0px 10px;
+  font-size: 20px;
+}
+.detail-content ul {
+  color: rgb(79, 166, 193);
+  font-style: italic;
+  font-size: 22px;
+}
+.footer {
+  background-color: green;
+  padding: 10px;
+  text-align: center;
+  color: white;
+  margin-top: 20px;
+}
+.order {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.menu-list {
+  margin: 0px 40px;
+}
+.menu-header {
+  background-color: green;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+}
+.header-first {
+  font-size: 20px;
+}
+.menu-list-content {
+  background-color: rgb(176, 174, 174);
+  padding: 10px;
+}
+.menu-list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+}
+.item-price {
+  color: red;
+}
+.order-button {
+  background-color: orange;
+  color: white;
+  padding: 10px 40px;
+  border-radius: 8px;
+  border: none;
+  margin-top: 10px;
+  margin-left: 40%;
+}
+.menu-list-footer {
+  background-color: orange;
+  color: white;
+  padding: 10px 40px;
+  text-align: center;
+  font-size: 18px;
+  display: none;
+}

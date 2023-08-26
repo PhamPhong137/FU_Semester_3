@@ -1,0 +1,98 @@
+// SIZE()
+
+// ||____ADD______//add last
+// ||	||______//add first
+// ||     ||______//add many
+// ||     ||______//add if age > 4
+// ||     ||______//add element have max age
+// ||
+// ||___INSERT____//insert position k
+// ||       ||____//insert after position k
+// ||
+// ||___SEARCH____//search node
+// ||       ||____//search node with string
+// ||       ||____//search node with integer/double
+		//search node by key integer/double
+// ||
+// ||___REMOVE____//remove node
+// ||       ||____//remove all
+// ||       ||____//remove at position k
+// ||       ||____//remove first no age < 6
+// ||       ||____//remove a node after position k
+// ||       ||____//remove node after 2 node have age < 9
+// ||       ||____//remove node thirdth have age < 6
+// ||       ||____//remove node first after node have position k
+// ||       ||____//remove node after node have price > xPrice
+// ||       ||____//remove 2 node last have age > 5
+// ||       ||____//remove second biggest
+// ||
+// ||___SORT______//sort by string
+// ||     ||______//sort by integer/ double
+// ||     ||______//sort by for
+// ||     ||______//sort 3 first element 
+//  ||     ||______//sortByWeight
+// ||
+// ||___SWAP______//swap min max
+// ||     ||______//swap node max second with node min first
+// ||
+// ||___GET_______//get node at index k
+// ||    ||_______//get node max
+// ||
+// ||___ORTHER____//traverse
+// ||       ||____//replace a node
+// ||       ||____//count number of node
+// ||       ||____//reverse list
+// ||       ||____//append another list
+// ||       ||____//change name first
+
+
+==========================================================================================
+//addLast if charAt(0) = 'A', price > 100 then do nothing
+//addFirst
+//add many
+//add if age > 4
+//insert after position k
+//Q1-f2=======add vao vi tri cu the=======
+
+
+//search node by key integer/double
+//search node with string
+//search node nang thu 2 sau cai xWeight
+
+
+// Remove all nodes with a given age
+//remove at position k
+//remove first no age < 6
+//remove a node after position k
+// remove the node after two nodes with price < 9
+// remove the third node with age < 6
+// remove the first node after the node at position k
+// remove the node after the node with price > xPrice
+// remove the last two nodes with age > 5
+// Remove the second largest node
+//remove the node after the first min hoof (if first min hoof is tail then do nothing
+
+// Get first min Car
+// Get first max Car
+//Get first min node
+//Get first max node
+
+
+//Q1-f4======sort theo yeu cau de bai======
+
+//ham sort tu vi tri k den vi tri h
+//tim max
+// tim position
+//sort by string
+//sort by integer/ double
+//sort by for
+//sort 3 first element 
+//swap min max
+//swap node max second with node min first
+
+
+//traverse
+//replace a node
+//reverse list
+//append another list
+//change name first
